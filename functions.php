@@ -1099,22 +1099,3 @@ function memberlite_theme_mod_copyright_textbox( $copyright_text ) {
     return $copyright_text;
 }
 add_filter( 'theme_mod_copyright_textbox', 'memberlite_theme_mod_copyright_textbox' );
-
-//Experiment: Disable block patterns by block slug based on Theme Variation
-add_action( 'init', function() {
-    // Example: theme mod toggles a "Substack" pack. (Words in this case bc we haven't added Substack variation yet)
-    $enable_substack_patterns = get_theme_mod( 'memberlite_variation', 'default' );
-
-    if ( $enable_substack_patterns === 'default' ) {
-        unregister_block_pattern( 'memberlite/sales-orange' );
-        unregister_block_pattern( 'memberlite/sales-purple' );
-    }
-
-}, 999 );
-
-//Experiment: Disable a category of patterns based on Theme Variation
-//add_action( 'init', function() {
-//    if ( ! get_theme_mod( 'memberlite_variation', 'default' ) ) {
-//        unregister_block_pattern_category( 'education-theme-variation' );
-//    }
-//}, 999 );
