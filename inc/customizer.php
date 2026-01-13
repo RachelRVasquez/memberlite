@@ -22,19 +22,17 @@ class Memberlite_Customize
                 'memberlite_panel',
                 array(
                         'title' => __('Memberlite Options', 'memberlite'),
-                        'priority' => 35,
+                        //'priority' => 35,
                         'description' => sprintf(__('Customize settings for Memberlite. Visit the <a href="%s" target="_blank">Memberlite Tools</a> screen to import, export, or reset theme customizations.', 'memberlite'), admin_url('admin.php?page=memberlite-tools')),
                 )
         );
 
         // Add Sections within the Panel
         $wp_customize->add_section(
-        //@todo: Kept the name to try and keep existing keys intact
                 'memberlite_theme_options',
                 array(
                         'title' => __('General Settings', 'memberlite'),
-                        'panel' => 'memberlite_panel',
-                        'priority' => 10,
+                        'panel' => 'memberlite_panel'
                 )
         );
 
@@ -42,8 +40,7 @@ class Memberlite_Customize
                 'memberlite_header_options',
                 array(
                         'title' => __('Header Settings', 'memberlite'),
-                        'panel' => 'memberlite_panel',
-                        'priority' => 20,
+                        'panel' => 'memberlite_panel'
                 )
         );
 
@@ -51,8 +48,7 @@ class Memberlite_Customize
                 'memberlite_post_page_options',
                 array(
                         'title' => __('Post & Page Settings', 'memberlite'),
-                        'panel' => 'memberlite_panel',
-                        'priority' => 30,
+                        'panel' => 'memberlite_panel'
                 )
         );
 
@@ -60,8 +56,7 @@ class Memberlite_Customize
                 'memberlite_footer_options',
                 array(
                         'title' => __('Footer Settings', 'memberlite'),
-                        'panel' => 'memberlite_panel',
-                        'priority' => 40,
+                        'panel' => 'memberlite_panel'
                 )
         );
 
@@ -85,7 +80,6 @@ class Memberlite_Customize
                                 'default' => __('Default', 'memberlite'),
                                 'words' => __('Words', 'memberlite'),
                         ),
-                        'priority' => 5,
                 )
         );
 
@@ -105,7 +99,6 @@ class Memberlite_Customize
                         'section' => 'memberlite_header_options',
                         'type' => 'select',
                         'choices' => Memberlite_Customize::get_all_fonts(),
-                        'priority' => 10,
                 )
         );
 
@@ -127,7 +120,6 @@ class Memberlite_Customize
                         'section' => 'memberlite_theme_options',
                         'type' => 'select',
                         'choices' => Memberlite_Customize::get_all_fonts(),
-                        'priority' => 11,
                 )
         );
 
@@ -146,7 +138,6 @@ class Memberlite_Customize
                         'type' => 'checkbox',
                         'label' => __('Show Login/Member Info in Header', 'memberlite'),
                         'section' => 'memberlite_header_options',
-                        'priority' => '15',
                 )
         );
 
@@ -165,7 +156,6 @@ class Memberlite_Customize
                         'type' => 'checkbox',
                         'label' => __('Show Search Form After Main Nav', 'memberlite'),
                         'section' => 'memberlite_header_options',
-                        'priority' => '20',
                 )
         );
 
@@ -186,7 +176,6 @@ class Memberlite_Customize
                         'type' => 'checkbox',
                         'label' => __('Stick Menu to Top of Screen on Scroll', 'memberlite'),
                         'section' => 'memberlite_header_options',
-                        'priority' => '21',
                 )
         );
 
@@ -219,7 +208,6 @@ class Memberlite_Customize
                                 '10-2' => '10x2',
                                 '11-1' => '11x1',
                         ),
-                        'priority' => 23,
                 )
         );
 
@@ -248,7 +236,6 @@ class Memberlite_Customize
                                 '10-2' => __('10x2', 'memberlite'),
                                 '11-1' => __('11x1', 'memberlite'),
                         ),
-                        'priority' => 24,
                 )
         );
 
@@ -272,7 +259,6 @@ class Memberlite_Customize
                                 'sidebar-left' => __('Left Sidebar', 'memberlite'),
                                 'sidebar-none' => __('No Sidebar', 'memberlite'),
                         ),
-                        'priority' => 25,
                 )
         );
 
@@ -296,7 +282,6 @@ class Memberlite_Customize
                                 'sidebar-blog-left' => __('Left Sidebar', 'memberlite'),
                                 'sidebar-blog-none' => __('No Sidebar', 'memberlite'),
                         ),
-                        'priority' => 30,
                 )
         );
 
@@ -320,34 +305,27 @@ class Memberlite_Customize
                                 'excerpt' => __('Show Post Excerpts', 'memberlite'),
                                 'grid' => __('Show As Grid', 'memberlite'),
                         ),
-                        'priority' => 40,
                 )
         );
 
         $memberlite_breadcrumbs = array(
                 'page_breadcrumbs' => array(
                         'label' => __('Breadcrumbs on Pages', 'memberlite'),
-                        'priority' => 51,
                 ),
                 'post_breadcrumbs' => array(
                         'label' => __('Breadcrumbs on Posts', 'memberlite'),
-                        'priority' => 52,
                 ),
                 'archive_breadcrumbs' => array(
                         'label' => __('Breadcrumbs on Archives', 'memberlite'),
-                        'priority' => 53,
                 ),
                 'attachment_breadcrumbs' => array(
                         'label' => __('Breadcrumbs on Attachments', 'memberlite'),
-                        'priority' => 53,
                 ),
                 'search_breadcrumbs' => array(
                         'label' => __('Breadcrumbs on Search Results', 'memberlite'),
-                        'priority' => 55,
                 ),
                 'profile_breadcrumbs' => array(
                         'label' => __('Breadcrumbs on Profiles', 'memberlite'),
-                        'priority' => 56,
                 ),
 
         );
@@ -367,7 +345,6 @@ class Memberlite_Customize
                         array(
                                 'label' => __('Breadcrumb Settings', 'memberlite'),
                                 'section' => 'memberlite_theme_options',
-                                'priority' => 50, // Set priority to appear just before the first checkbox (51)
                         )
                 )
         );
@@ -389,7 +366,6 @@ class Memberlite_Customize
                             'type' => 'checkbox',
                             'label' => $memberlite_breadcrumb['label'],
                             'section' => 'memberlite_theme_options',
-                            'priority' => $memberlite_breadcrumb['priority'],
                     )
             );
         };
@@ -409,7 +385,6 @@ class Memberlite_Customize
                         'type' => 'checkbox',
                         'label' => 'Show Prev/Next on Single Posts',
                         'section' => 'memberlite_post_page_options',
-                        'priority' => '60',
                 )
         );
 
@@ -428,7 +403,6 @@ class Memberlite_Customize
                         'type' => 'checkbox',
                         'label' => __('Show Prev/Next on Single Pages', 'memberlite'),
                         'section' => 'memberlite_post_page_options',
-                        'priority' => '61',
                 )
         );
 
@@ -462,7 +436,6 @@ class Memberlite_Customize
                         'section' => 'memberlite_post_page_options',
                         'type' => 'select',
                         'choices' => $memberlite_loop_images_choices,
-                        'priority' => 70,
                 )
         );
 
@@ -482,7 +455,6 @@ class Memberlite_Customize
                         'label' => __('Post Entry Meta (before)', 'memberlite'),
                         'section' => 'memberlite_post_page_options',
                         'type' => 'text',
-                        'priority' => 80,
                 )
         );
 
@@ -502,7 +474,6 @@ class Memberlite_Customize
                         'label' => __('Post Entry Meta (after)', 'memberlite'),
                         'section' => 'memberlite_post_page_options',
                         'type' => 'text',
-                        'priority' => 90,
                 )
         );
 
@@ -521,7 +492,6 @@ class Memberlite_Customize
                         'type' => 'checkbox',
                         'label' => __('Show Author Block on Single Posts', 'memberlite'),
                         'section' => 'memberlite_post_page_options',
-                        'priority' => 100,
                 )
         );
 
@@ -546,7 +516,6 @@ class Memberlite_Customize
                                 '4' => __('4', 'memberlite'),
                                 '6' => __('6', 'memberlite'),
                         ),
-                        'priority' => 110,
                 )
         );
 
@@ -566,7 +535,6 @@ class Memberlite_Customize
                         'label' => __('Breadcrumb Delimiter', 'memberlite'),
                         'section' => 'memberlite_theme_options',
                         'type' => 'text',
-                        'priority' => 120,
                 )
         );
 
@@ -586,7 +554,6 @@ class Memberlite_Customize
                         'label' => __('Copyright Text', 'memberlite'),
                         'section' => 'memberlite_footer_options',
                         'type' => 'text',
-                        'priority' => 130,
                 )
         );
 
@@ -599,13 +566,31 @@ class Memberlite_Customize
                 )
         );
 
+        // Add a heading before the "Show back to top link"
+        $wp_customize->add_setting(
+                'memberlite_links_heading',
+                array(
+                        'sanitize_callback' => 'sanitize_text_field',
+                )
+        );
+
+        $wp_customize->add_control(
+                new Memberlite_Customize_Header_Control(
+                        $wp_customize,
+                        'memberlite_links_heading',
+                        array(
+                                'label' => __('Global Links', 'memberlite'),
+                                'section' => 'memberlite_theme_options',
+                        )
+                )
+        );
+
         $wp_customize->add_control(
                 'memberlite_back_to_top',
                 array(
                         'type' => 'checkbox',
                         'label' => __('Show Back to Top Link', 'memberlite'),
                         'section' => 'memberlite_theme_options',
-                        'priority' => 140,
                 )
         );
 
@@ -631,7 +616,6 @@ class Memberlite_Customize
                                         'custom' => 'Custom',
                                 )
                         ),
-                        'priority' => 1,
                 )
         );
 
@@ -650,7 +634,6 @@ class Memberlite_Customize
                         'type' => 'checkbox',
                         'label' => __('Use Dark Background/Inverted Scheme', 'memberlite'),
                         'section' => 'colors',
-                        'priority' => '2',
                 )
         );
 
@@ -672,7 +655,6 @@ class Memberlite_Customize
                                 'label' => __('Header Background Color', 'memberlite'),
                                 'section' => 'colors',
                                 'settings' => 'bgcolor_header',
-                                'priority' => 10,
                         )
                 )
         );
@@ -695,7 +677,6 @@ class Memberlite_Customize
                                 'label' => __('Primary Navigation Background Color', 'memberlite'),
                                 'section' => 'colors',
                                 'settings' => 'bgcolor_site_navigation',
-                                'priority' => 20,
                         )
                 )
         );
@@ -718,7 +699,6 @@ class Memberlite_Customize
                                 'label' => __('Primary Navigation Color', 'memberlite'),
                                 'section' => 'colors',
                                 'settings' => 'color_site_navigation',
-                                'priority' => 30,
                         )
                 )
         );
@@ -741,7 +721,6 @@ class Memberlite_Customize
                                 'label' => __('Text Color', 'memberlite'),
                                 'section' => 'colors',
                                 'settings' => 'color_text',
-                                'priority' => 40,
                         )
                 )
         );
@@ -764,7 +743,6 @@ class Memberlite_Customize
                                 'label' => __('Link Color', 'memberlite'),
                                 'section' => 'colors',
                                 'settings' => 'color_link',
-                                'priority' => 40,
                         )
                 )
         );
@@ -787,7 +765,6 @@ class Memberlite_Customize
                                 'label' => __('Meta Link Color', 'memberlite'),
                                 'section' => 'colors',
                                 'settings' => 'color_meta_link',
-                                'priority' => 50,
                         )
                 )
         );
@@ -810,7 +787,6 @@ class Memberlite_Customize
                                 'label' => __('Primary Color', 'memberlite'),
                                 'section' => 'colors',
                                 'settings' => 'color_primary',
-                                'priority' => 60,
                         )
                 )
         );
@@ -833,7 +809,6 @@ class Memberlite_Customize
                                 'label' => __('Secondary Color', 'memberlite'),
                                 'section' => 'colors',
                                 'settings' => 'color_secondary',
-                                'priority' => 70,
                         )
                 )
         );
@@ -857,7 +832,6 @@ class Memberlite_Customize
                                 'description' => __('Also used for CTA buttons', 'memberlite'),
                                 'section' => 'colors',
                                 'settings' => 'color_action',
-                                'priority' => 80,
                         )
                 )
         );
@@ -880,7 +854,6 @@ class Memberlite_Customize
                                 'label' => __('Default Button Color', 'memberlite'),
                                 'section' => 'colors',
                                 'settings' => 'color_button',
-                                'priority' => 90,
                         )
                 )
         );
@@ -903,7 +876,6 @@ class Memberlite_Customize
                                 'label' => __('Page Masthead Background Color', 'memberlite'),
                                 'section' => 'colors',
                                 'settings' => 'bgcolor_page_masthead',
-                                'priority' => 100,
                         )
                 )
         );
@@ -926,7 +898,6 @@ class Memberlite_Customize
                                 'label' => __('Page Masthead Text Color', 'memberlite'),
                                 'section' => 'colors',
                                 'settings' => 'color_page_masthead',
-                                'priority' => 110,
                         )
                 )
         );
@@ -949,7 +920,6 @@ class Memberlite_Customize
                                 'label' => __('Footer Widgets Background Color', 'memberlite'),
                                 'section' => 'colors',
                                 'settings' => 'bgcolor_footer_widgets',
-                                'priority' => 120,
                         )
                 )
         );
@@ -972,7 +942,6 @@ class Memberlite_Customize
                                 'label' => __('Footer Widgets Text Color', 'memberlite'),
                                 'section' => 'colors',
                                 'settings' => 'color_footer_widgets',
-                                'priority' => 130,
                         )
                 )
         );
