@@ -16,7 +16,6 @@ class Memberlite_Customize
 {
     public static function register($wp_customize)
     {
-        global $memberlite_defaults;
         // Add Memberlite Options Panel
         $wp_customize->add_panel(
                 'memberlite_panel',
@@ -105,6 +104,7 @@ class Memberlite_Customize
                 ),
         ));
 
+        // GENERAL: Breadcrumb Locations ================
         $memberlite_breadcrumbs = array(
                 'page_breadcrumbs' => array(
                         'label' => __('Breadcrumbs on Pages', 'memberlite'),
@@ -131,22 +131,15 @@ class Memberlite_Customize
         self::add_memberlite_heading($wp_customize, 'memberlite_breadcrumbs_heading', __('Breadcrumb Settings', 'memberlite'), 'memberlite_theme_options');
 
         foreach ($memberlite_breadcrumbs as $breadcrumb_slug => $memberlite_breadcrumb) {
-            // SETTINGS
-            $wp_customize->add_setting(
+            self::add_memberlite_setting_control(
+                    $wp_customize,
                     $breadcrumb_slug,
+                    $memberlite_breadcrumb['label'],
+                    'memberlite_theme_options',
                     array(
-                            'default' => false,
+                            'type'              => 'checkbox',
+                            'default'           => false,
                             'sanitize_callback' => array('Memberlite_Customize', 'sanitize_checkbox'),
-                            'sanitize_js_callback' => array('Memberlite_Customize', 'sanitize_js_callback'),
-                    )
-            );
-            // CONTROLS
-            $wp_customize->add_control(
-                    $breadcrumb_slug,
-                    array(
-                            'type' => 'checkbox',
-                            'label' => $memberlite_breadcrumb['label'],
-                            'section' => 'memberlite_theme_options',
                     )
             );
         };
@@ -293,7 +286,7 @@ class Memberlite_Customize
         ));
 
         // COLORS: Dark Mode ================
-        //@todo: Fix priority
+        //@todo: Fix priority if we keep with colors, potentially move this under theme variations in General?
         self::add_memberlite_setting_control($wp_customize, 'memberlite_darkcss', __('Use dark mode theme.', 'memberlite'), 'colors', array(
                 'type' => 'checkbox',
                 'sanitize_callback' => array('Memberlite_Customize', 'sanitize_checkbox'),
@@ -306,31 +299,17 @@ class Memberlite_Customize
         @todo: Can we toggle these color schemes based on the theme variation?
         */
 
-        $wp_customize->add_setting(
-                'memberlite_color_scheme',
-                array(
-                        'default' => $memberlite_defaults['memberlite_color_scheme'],
-                        'sanitize_callback' => array('Memberlite_Customize', 'sanitize_color_scheme'),
-                        'sanitize_js_callback' => array('Memberlite_Customize', 'sanitize_js_color_scheme'),
-                        'transport' => 'postMessage',
-                )
-        );
-
         //@todo: input_attrs not working, disable with JS when theme variation is implemented
-        $wp_customize->add_control(
-                'memberlite_color_scheme',
-                array(
-                        'label' => __('Memberlite Color Scheme', 'memberlite'),
-                        'section' => 'colors',
-                        'type' => 'select',
-                        'choices' => array_merge(
-                                Memberlite_Customize::get_color_scheme_choices(),
-                                array(
-                                        'custom' => 'Custom',
-                                )
+        self::add_memberlite_setting_control($wp_customize, 'memberlite_color_scheme', __('Memberlite Color Scheme', 'memberlite'), 'colors', array(
+                'type' => 'select',
+                'choices' => array_merge(
+                        Memberlite_Customize::get_color_scheme_choices(),
+                        array(
+                                'custom' => 'Custom',
                         )
-                )
-        );
+                ),
+                'description' => __('Deprecated: Determined by Theme Variation. Colors be overwritten individually below.', 'memberlite'),
+        ));
 
         // COLORS: Header Background Color
         self::add_memberlite_color_control($wp_customize, 'memberlite_bgcolor_header', __('Header Background Color', 'memberlite'), 'bgcolor_header');
