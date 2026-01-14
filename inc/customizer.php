@@ -64,8 +64,8 @@ class Memberlite_Customize
                 'type' => 'select',
                 'choices' => array(
                         'default' => __('Legacy', 'memberlite'), // Will default to opinionated settings based on legacy/existing theme before blocks
-                        'media'   => __('Media App', 'memberlite'), // "sub-stack" theme variation
-                        'custom'  => __('Custom', 'memberlite'), // Triggers when a user changes pre-set settings
+                        'media' => __('Media App', 'memberlite'), // "sub-stack" theme variation
+                        'custom' => __('Custom', 'memberlite'), // Triggers when a user changes pre-set settings
                 ),
                 'description' => __('Theme variations set colors, fonts, and layout options as a starting point. All of these options can be overwritten individually.', 'memberlite'),
         ));
@@ -78,11 +78,9 @@ class Memberlite_Customize
         ));
 
         // GENERAL: Heading Font ================
-        //@todo: I added this, do we need a separate control for heading fonts?
-        self::add_memberlite_setting_control($wp_customize, 'memberlite_heading_font', __('Heading Font', 'memberlite'), 'memberlite_theme_options', array(
+        self::add_memberlite_setting_control($wp_customize, 'memberlite_header_font', __('Heading Font', 'memberlite'), 'memberlite_theme_options', array(
                 'type' => 'select',
                 'choices' => self::get_all_fonts(),
-                'description' => __('This font is used for all headings across the site.', 'memberlite'),
         ));
 
         // GENERAL: Columns Ratio ================
@@ -167,12 +165,6 @@ class Memberlite_Customize
                 'type' => 'checkbox',
                 'default' => true,
                 'sanitize_callback' => array('Memberlite_Customize', 'sanitize_checkbox'),
-        ));
-
-        // HEADER: Header Font ================
-        self::add_memberlite_setting_control($wp_customize, 'memberlite_header_font', __('Header Font', 'memberlite'), 'memberlite_header_options', array(
-                'type' => 'select',
-                'choices' => self::get_all_fonts(),
         ));
 
         // HEADER: Columns Ratio ================
@@ -300,9 +292,19 @@ class Memberlite_Customize
                 'sanitize_callback' => array('Memberlite_Customize', 'sanitize_text_with_links'),
         ));
 
-        /* These conflict with setting a theme variation - discuss...
+        // COLORS: Dark Mode ================
+        //@todo: Fix priority
+        self::add_memberlite_setting_control($wp_customize, 'memberlite_darkcss', __('Use dark mode theme.', 'memberlite'), 'colors', array(
+                'type' => 'checkbox',
+                'sanitize_callback' => array('Memberlite_Customize', 'sanitize_checkbox'),
+        ));
+
+        /* Color scheme conflicts with setting a theme variation - discuss...
         Assuming the theme variation determines the global color scheme and
         once individual colors are changed, the theme variation changes to "custom".
+
+        @todo: Can we toggle these color schemes based on the theme variation?
+        */
 
         $wp_customize->add_setting(
                 'memberlite_color_scheme',
@@ -314,6 +316,7 @@ class Memberlite_Customize
                 )
         );
 
+        //@todo: input_attrs not working, disable with JS when theme variation is implemented
         $wp_customize->add_control(
                 'memberlite_color_scheme',
                 array(
@@ -325,338 +328,56 @@ class Memberlite_Customize
                                 array(
                                         'custom' => 'Custom',
                                 )
-                        ),
-                )
-        );
-
-        $wp_customize->add_setting(
-                'memberlite_darkcss',
-                array(
-                        'default' => false,
-                        'sanitize_callback' => array('Memberlite_Customize', 'sanitize_checkbox'),
-                        'sanitize_js_callback' => array('Memberlite_Customize', 'sanitize_js_callback'),
-                )
-        );
-
-        $wp_customize->add_control(
-                'memberlite_darkcss',
-                array(
-                        'type' => 'checkbox',
-                        'label' => __('Use Dark Background/Inverted Scheme', 'memberlite'),
-                        'section' => 'colors',
-                )
-        );
-         */
-
-        /* REFACTOR ONCE WE CLARIFY WHAT WE'RE DOING WITH COLORS */
-        $wp_customize->add_setting(
-                'bgcolor_header',
-                array(
-                        'default' => $memberlite_defaults['bgcolor_header'],
-                        'sanitize_callback' => 'sanitize_hex_color',
-                        'sanitize_js_callback' => 'maybe_hash_hex_color',
-                        'transport' => 'postMessage',
-                )
-        );
-
-        $wp_customize->add_control(
-                new WP_Customize_Color_Control(
-                        $wp_customize,
-                        'memberlite_bgcolor_header',
-                        array(
-                                'label' => __('Header Background Color', 'memberlite'),
-                                'section' => 'colors',
-                                'settings' => 'bgcolor_header',
                         )
                 )
         );
 
-        $wp_customize->add_setting(
-                'bgcolor_site_navigation',
-                array(
-                        'default' => $memberlite_defaults['bgcolor_site_navigation'],
-                        'sanitize_callback' => 'sanitize_hex_color',
-                        'sanitize_js_callback' => 'maybe_hash_hex_color',
-                        'transport' => 'postMessage',
-                )
-        );
+        // COLORS: Header Background Color
+        self::add_memberlite_color_control($wp_customize, 'memberlite_bgcolor_header', __('Header Background Color', 'memberlite'), 'bgcolor_header');
 
-        $wp_customize->add_control(
-                new WP_Customize_Color_Control(
-                        $wp_customize,
-                        'memberlite_bgcolor_site_navigation',
-                        array(
-                                'label' => __('Primary Navigation Background Color', 'memberlite'),
-                                'section' => 'colors',
-                                'settings' => 'bgcolor_site_navigation',
-                        )
-                )
-        );
+        // COLORS: Primary Navigation Background Color
+        self::add_memberlite_color_control($wp_customize, 'memberlite_bgcolor_site_navigation', __('Primary Navigation Background Color', 'memberlite'), 'bgcolor_site_navigation');
 
-        $wp_customize->add_setting(
-                'color_site_navigation',
-                array(
-                        'default' => $memberlite_defaults['color_site_navigation'],
-                        'sanitize_callback' => 'sanitize_hex_color',
-                        'sanitize_js_callback' => 'maybe_hash_hex_color',
-                        'transport' => 'postMessage',
-                )
-        );
+        // COLORS: Primary Navigation Font Color
+        self::add_memberlite_color_control($wp_customize, 'memberlite_color_site_navigation', __('Primary Navigation Font Color', 'memberlite'), 'color_site_navigation');
 
-        $wp_customize->add_control(
-                new WP_Customize_Color_Control(
-                        $wp_customize,
-                        'memberlite_color_site_navigation',
-                        array(
-                                'label' => __('Primary Navigation Color', 'memberlite'),
-                                'section' => 'colors',
-                                'settings' => 'color_site_navigation',
-                        )
-                )
-        );
+        // COLORS: Text Color
+        //@todo: Add description since it was re-labeled
+        self::add_memberlite_color_control($wp_customize, 'memberlite_color_text', __('Content Color', 'memberlite'), 'color_text');
 
-        $wp_customize->add_setting(
-                'color_text',
-                array(
-                        'default' => $memberlite_defaults['color_text'],
-                        'sanitize_callback' => 'sanitize_hex_color',
-                        'sanitize_js_callback' => 'maybe_hash_hex_color',
-                        'transport' => 'postMessage',
-                )
-        );
+        // COLORS: Link Color
+        //@todo: Add description clarifying that this only affects content, not the header or footer
+        self::add_memberlite_color_control($wp_customize, 'memberlite_color_link', __('Link Color', 'memberlite'), 'color_link');
 
-        $wp_customize->add_control(
-                new WP_Customize_Color_Control(
-                        $wp_customize,
-                        'memberlite_color_text',
-                        array(
-                                'label' => __('Text Color', 'memberlite'),
-                                'section' => 'colors',
-                                'settings' => 'color_text',
-                        )
-                )
-        );
+        // COLORS: Post Meta Link Color
+        //@todo: Meta link color doesn't affect categories on single post?
+        self::add_memberlite_color_control($wp_customize, 'memberlite_color_meta_link', __('Meta Link Color', 'memberlite'), 'color_meta_link');
 
-        $wp_customize->add_setting(
-                'color_link',
-                array(
-                        'default' => $memberlite_defaults['color_link'],
-                        'sanitize_callback' => 'sanitize_hex_color',
-                        'sanitize_js_callback' => 'maybe_hash_hex_color',
-                        'transport' => 'postMessage',
-                )
-        );
+        // COLORS: Default Button Color
+        self::add_memberlite_color_control($wp_customize, 'memberlite_color_button', __('Default Button Color', 'memberlite'), 'color_button');
 
-        $wp_customize->add_control(
-                new WP_Customize_Color_Control(
-                        $wp_customize,
-                        'memberlite_color_link',
-                        array(
-                                'label' => __('Link Color', 'memberlite'),
-                                'section' => 'colors',
-                                'settings' => 'color_link',
-                        )
-                )
-        );
+        // COLORS: Primary Color
+        //@todo: Also affects buttons? Is there a point in the "default button color" setting?
+        self::add_memberlite_color_control($wp_customize, 'memberlite_color_primary', __('Primary Color', 'memberlite'), 'color_primary');
 
-        $wp_customize->add_setting(
-                'color_meta_link',
-                array(
-                        'default' => $memberlite_defaults['color_meta_link'],
-                        'sanitize_callback' => 'sanitize_hex_color',
-                        'sanitize_js_callback' => 'maybe_hash_hex_color',
-                        'transport' => 'postMessage',
-                )
-        );
+        // COLORS: Secondary Color
+        //@todo: Clarify what this color affects vs primary color, also affects buttons?
+        self::add_memberlite_color_control($wp_customize, 'memberlite_color_secondary', __('Secondary Color', 'memberlite'), 'color_secondary');
 
-        $wp_customize->add_control(
-                new WP_Customize_Color_Control(
-                        $wp_customize,
-                        'memberlite_color_meta_link',
-                        array(
-                                'label' => __('Meta Link Color', 'memberlite'),
-                                'section' => 'colors',
-                                'settings' => 'color_meta_link',
-                        )
-                )
-        );
+        // COLORS: Action Color
+        self::add_memberlite_color_control($wp_customize, 'memberlite_color_action', __('Action Color', 'memberlite'), 'color_action');
 
-        $wp_customize->add_setting(
-                'color_primary',
-                array(
-                        'default' => $memberlite_defaults['color_primary'],
-                        'sanitize_callback' => 'sanitize_hex_color',
-                        'sanitize_js_callback' => 'maybe_hash_hex_color',
-                        'transport' => 'postMessage',
-                )
-        );
+        // COLORS: Page Masthead Background Color
+        self::add_memberlite_color_control($wp_customize, 'memberlite_bgcolor_page_masthead', __('Page Masthead Background Color', 'memberlite'), 'bgcolor_page_masthead');
 
-        $wp_customize->add_control(
-                new WP_Customize_Color_Control(
-                        $wp_customize,
-                        'memberlite_color_primary',
-                        array(
-                                'label' => __('Primary Color', 'memberlite'),
-                                'section' => 'colors',
-                                'settings' => 'color_primary',
-                        )
-                )
-        );
+        // COLORS: Page Masthead Text Color
+        self::add_memberlite_color_control($wp_customize, 'memberlite_color_page_masthead', __('Page Masthead Text Color', 'memberlite'), 'color_page_masthead');
 
-        $wp_customize->add_setting(
-                'color_secondary',
-                array(
-                        'default' => $memberlite_defaults['color_secondary'],
-                        'sanitize_callback' => 'sanitize_hex_color',
-                        'sanitize_js_callback' => 'maybe_hash_hex_color',
-                        'transport' => 'postMessage',
-                )
-        );
+        // COLORS: Footer Widgets Background Color
+        self::add_memberlite_color_control($wp_customize, 'memberlite_bgcolor_footer_widgets', __('Footer Widgets Background Color', 'memberlite'), 'bgcolor_footer_widgets');
 
-        $wp_customize->add_control(
-                new WP_Customize_Color_Control(
-                        $wp_customize,
-                        'memberlite_color_secondary',
-                        array(
-                                'label' => __('Secondary Color', 'memberlite'),
-                                'section' => 'colors',
-                                'settings' => 'color_secondary',
-                        )
-                )
-        );
-
-        $wp_customize->add_setting(
-                'color_action',
-                array(
-                        'default' => $memberlite_defaults['color_action'],
-                        'sanitize_callback' => 'sanitize_hex_color',
-                        'sanitize_js_callback' => 'maybe_hash_hex_color',
-                        'transport' => 'postMessage',
-                )
-        );
-
-        $wp_customize->add_control(
-                new WP_Customize_Color_Control(
-                        $wp_customize,
-                        'memberlite_color_action',
-                        array(
-                                'label' => __('Action Color', 'memberlite'),
-                                'description' => __('Also used for CTA buttons', 'memberlite'),
-                                'section' => 'colors',
-                                'settings' => 'color_action',
-                        )
-                )
-        );
-
-        $wp_customize->add_setting(
-                'color_button',
-                array(
-                        'default' => $memberlite_defaults['color_button'],
-                        'sanitize_callback' => 'sanitize_hex_color',
-                        'sanitize_js_callback' => 'maybe_hash_hex_color',
-                        'transport' => 'postMessage',
-                )
-        );
-
-        $wp_customize->add_control(
-                new WP_Customize_Color_Control(
-                        $wp_customize,
-                        'memberlite_color_button',
-                        array(
-                                'label' => __('Default Button Color', 'memberlite'),
-                                'section' => 'colors',
-                                'settings' => 'color_button',
-                        )
-                )
-        );
-
-        $wp_customize->add_setting(
-                'bgcolor_page_masthead',
-                array(
-                        'default' => $memberlite_defaults['bgcolor_page_masthead'],
-                        'sanitize_callback' => 'sanitize_hex_color',
-                        'sanitize_js_callback' => 'maybe_hash_hex_color',
-                        'transport' => 'postMessage',
-                )
-        );
-
-        $wp_customize->add_control(
-                new WP_Customize_Color_Control(
-                        $wp_customize,
-                        'memberlite_bgcolor_page_masthead',
-                        array(
-                                'label' => __('Page Masthead Background Color', 'memberlite'),
-                                'section' => 'colors',
-                                'settings' => 'bgcolor_page_masthead',
-                        )
-                )
-        );
-
-        $wp_customize->add_setting(
-                'color_page_masthead',
-                array(
-                        'default' => $memberlite_defaults['color_page_masthead'],
-                        'sanitize_callback' => 'sanitize_hex_color',
-                        'sanitize_js_callback' => 'maybe_hash_hex_color',
-                        'transport' => 'postMessage',
-                )
-        );
-
-        $wp_customize->add_control(
-                new WP_Customize_Color_Control(
-                        $wp_customize,
-                        'memberlite_color_page_masthead',
-                        array(
-                                'label' => __('Page Masthead Text Color', 'memberlite'),
-                                'section' => 'colors',
-                                'settings' => 'color_page_masthead',
-                        )
-                )
-        );
-
-        $wp_customize->add_setting(
-                'bgcolor_footer_widgets',
-                array(
-                        'default' => $memberlite_defaults['bgcolor_footer_widgets'],
-                        'sanitize_callback' => 'sanitize_hex_color',
-                        'sanitize_js_callback' => 'maybe_hash_hex_color',
-                        'transport' => 'postMessage',
-                )
-        );
-
-        $wp_customize->add_control(
-                new WP_Customize_Color_Control(
-                        $wp_customize,
-                        'memberlite_bgcolor_footer_widgets',
-                        array(
-                                'label' => __('Footer Widgets Background Color', 'memberlite'),
-                                'section' => 'colors',
-                                'settings' => 'bgcolor_footer_widgets',
-                        )
-                )
-        );
-
-        $wp_customize->add_setting(
-                'color_footer_widgets',
-                array(
-                        'default' => $memberlite_defaults['color_footer_widgets'],
-                        'sanitize_callback' => 'sanitize_hex_color',
-                        'sanitize_js_callback' => 'maybe_hash_hex_color',
-                        'transport' => 'postMessage',
-                )
-        );
-
-        $wp_customize->add_control(
-                new WP_Customize_Color_Control(
-                        $wp_customize,
-                        'memberlite_color_footer_widgets',
-                        array(
-                                'label' => __('Footer Widgets Text Color', 'memberlite'),
-                                'section' => 'colors',
-                                'settings' => 'color_footer_widgets',
-                        )
-                )
-        );
+        // COLORS: Footer Widgets Text Color
+        self::add_memberlite_color_control($wp_customize, 'memberlite_color_footer_widgets', __('Footer Widgets Text Color', 'memberlite'), 'color_footer_widgets');
 
         $wp_customize->get_setting('blogname')->transport = 'postMessage';
 
@@ -712,8 +433,44 @@ class Memberlite_Customize
                         $wp_customize,
                         $id,
                         array(
-                                'label'   => $label,
+                                'label' => $label,
                                 'section' => $section,
+                        )
+                )
+        );
+    }
+
+    /**
+     * Helper to add setting/control pairs for colors
+     *
+     * @param object $wp_customize
+     * @param string $id
+     * @param string $label
+     * @param string $setting_id
+     * @return void
+     */
+    public static function add_memberlite_color_control(object $wp_customize, string $id, string $label, string $setting_id): void
+    {
+        global $memberlite_defaults;
+
+        $wp_customize->add_setting(
+                $setting_id,
+                array(
+                        'default'              => isset($memberlite_defaults[$setting_id]) ? $memberlite_defaults[$setting_id] : '',
+                        'sanitize_callback'    => 'sanitize_hex_color',
+                        'sanitize_js_callback' => 'maybe_hash_hex_color',
+                        'transport'            => 'postMessage',
+                )
+        );
+
+        $wp_customize->add_control(
+                new WP_Customize_Color_Control(
+                        $wp_customize,
+                        $id,
+                        array(
+                                'label'    => $label,
+                                'section'  => 'colors',
+                                'settings' => $setting_id,
                         )
                 )
         );
