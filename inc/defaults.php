@@ -68,6 +68,7 @@ $memberlite_defaults = apply_filters( 'memberlite_defaults', array(
 ) );
 
 //aka substack
+//@todo: Create color schemes that work with the theme variation setting, so the variation setting can preset color scheme too rather than conflict with it.
 $memberlite_theme_media_app = apply_filters( 'memberlite_variation_media', array(
     'memberlite_variation'						=> 'media-app',
     'memberlite_webfonts'						=> 'Helvetica', // Unused property for backwards compatibility

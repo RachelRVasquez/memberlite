@@ -66,7 +66,32 @@ class Memberlite_Customize
                         'media' => __('Media App', 'memberlite'), // "sub-stack" theme variation
                         'custom' => __('Custom', 'memberlite'), // Triggers when a user changes pre-set settings
                 ),
-                'description' => __('Theme variations set colors, fonts, and layout options as a starting point. All of these options can be overwritten individually.', 'memberlite'),
+                'description' => __('Theme variations set color scheme, fonts, and layout options as a starting point. All of these settings can be customized individually.', 'memberlite'),
+        ));
+
+        // GENERAL: Dark Mode ================
+        self::add_memberlite_setting_control($wp_customize, 'memberlite_darkcss', __('Use dark mode colors.', 'memberlite'), 'memberlite_theme_options', array(
+                'type' => 'checkbox',
+                'sanitize_callback' => array('Memberlite_Customize', 'sanitize_checkbox'),
+                'description' => __('Will apply a dark mode style of a color scheme that hasn\'t been customized.', 'memberlite'),
+        ));
+
+        /* Assuming the theme variation presets a global color scheme, if
+        individual colors are changed, the theme variation changes to "custom".
+        The "color scheme" setting can also change to "custom" which it already does.
+        */
+
+        // GENERAL: Color Scheme ================
+        //@todo: How about we keep color scheme, but treat it as just another setting the theme variation can preset?
+        self::add_memberlite_setting_control($wp_customize, 'memberlite_color_scheme', __('Memberlite Color Scheme', 'memberlite'), 'memberlite_theme_options', array(
+                'type' => 'select',
+                'choices' => array_merge(
+                        Memberlite_Customize::get_color_scheme_choices(),
+                        array(
+                                'custom' => 'Custom',
+                        )
+                ),
+                'description' => __('Preset by Theme Variation. Customize here or in the "Colors" section.', 'memberlite'),
         ));
 
         // GENERAL: Body Font ================
@@ -283,32 +308,6 @@ class Memberlite_Customize
         self::add_memberlite_setting_control($wp_customize, 'copyright_textbox', __('Copyright Text', 'memberlite'), 'memberlite_footer_options', array(
                 'transport' => 'postMessage',
                 'sanitize_callback' => array('Memberlite_Customize', 'sanitize_text_with_links'),
-        ));
-
-        // COLORS: Dark Mode ================
-        //@todo: Fix priority if we keep with colors, potentially move this under theme variations in General?
-        self::add_memberlite_setting_control($wp_customize, 'memberlite_darkcss', __('Use dark mode theme.', 'memberlite'), 'colors', array(
-                'type' => 'checkbox',
-                'sanitize_callback' => array('Memberlite_Customize', 'sanitize_checkbox'),
-        ));
-
-        /* Color scheme conflicts with setting a theme variation - discuss...
-        Assuming the theme variation determines the global color scheme and
-        once individual colors are changed, the theme variation changes to "custom".
-
-        @todo: Can we toggle these color schemes based on the theme variation?
-        */
-
-        //@todo: input_attrs not working, disable with JS when theme variation is implemented
-        self::add_memberlite_setting_control($wp_customize, 'memberlite_color_scheme', __('Memberlite Color Scheme', 'memberlite'), 'colors', array(
-                'type' => 'select',
-                'choices' => array_merge(
-                        Memberlite_Customize::get_color_scheme_choices(),
-                        array(
-                                'custom' => 'Custom',
-                        )
-                ),
-                'description' => __('Deprecated: Determined by Theme Variation. Colors be overwritten individually below.', 'memberlite'),
         ));
 
         // COLORS: Header Background Color
