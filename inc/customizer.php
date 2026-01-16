@@ -119,13 +119,25 @@ class Memberlite_Customize
         ));
 
         // GENERAL: Sidebar Location ================
-        self::add_memberlite_setting_control($wp_customize, 'sidebar_location', __('Default Layout', 'memberlite'), 'memberlite_theme_options', array(
+        self::add_memberlite_setting_control($wp_customize, 'sidebar_location', __('Sidebar Placement', 'memberlite'), 'memberlite_theme_options', array(
                 'type' => 'radio',
-                'description' => __('(Deprecated) Should be set to "No Sidebar" when using blocks in content.', 'memberlite'),
+                'description' => __('By default, sidebars will display on archives (not for grid style) and single posts.', 'memberlite'),
                 'choices' => array(
                         'sidebar-right' => __('Right Sidebar', 'memberlite'),
                         'sidebar-left' => __('Left Sidebar', 'memberlite'),
                         'sidebar-none' => __('No Sidebar', 'memberlite'),
+                ),
+        ));
+
+        // GENERAL: Footer Style (template? what do we call this...) ================
+        //@todo: Kim mentioned not wanting to rely on settings for this? Clarify...
+        // Is the intention for people to be able to overwrite smaller legos with duplicates of those files in their child theme, but we still control overall layout/style?
+        self::add_memberlite_setting_control($wp_customize, 'footer_style', __('Footer Style', 'memberlite'), 'memberlite_theme_options', array(
+                'type' => 'radio',
+                'description' => __('Select from three different footer layout options.', 'memberlite'),
+                'choices' => array(
+                        'footer-default' => __('Legacy', 'memberlite'), // Existing memberlite footer
+                        'footer-centered' => __('Footer Stacked', 'memberlite'), //one column, widgets stacked vertically (sub-stack inspired)
                 ),
         ));
 

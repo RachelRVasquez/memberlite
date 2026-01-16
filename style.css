@@ -2343,7 +2343,7 @@ a:active:not(.pmpro_btn:active) {
 /*--------------------------------------------------------------
 10.6 Comments
 --------------------------------------------------------------*/
-#comments { 
+#comments {
 	margin-bottom:  2.9rem;
 }
 
@@ -2606,6 +2606,29 @@ a:active:not(.pmpro_btn:active) {
 	color: var(--memberlite-color-white);
 	text-decoration: none;
 	border-bottom: 1px dotted var(--memberlite-color-white);
+}
+
+/* Quick and dirty styles */
+
+.footer-style-stacked {
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.footer-style-stacked .site-info-copyright-text {
+    margin: 0 1rem 0 0;
+    font-size: 1.4rem;
+}
+
+.footer-style-stacked.footer-navigation a {
+    font-size: 1.4rem;
+    color: grey!important;
+}
+
+.footer-style-stacked.footer-navigation ul li {
+    border: none;
+    padding: 1rem;
 }
 
 /*--------------------------------------------------------------
@@ -2928,7 +2951,7 @@ a:active:not(.pmpro_btn:active) {
 }
 #secondary .widget.widget_pmpro_member_login ul.menu ul.sub-menu {
 	margin-top: 0;
-} 
+}
 #secondary .widget.widget_pmpro_member_login .pmpro_logged_in_welcome_wrap .menu {
 	list-style: none;
 	margin-left: 0;
@@ -3106,7 +3129,7 @@ body.memberlite-banner-hidden .entry-content > .banner:first-child {
 	text-align: left;
 }
 .banner.banner_background-image {
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
 	background-size: cover;
 }
 
