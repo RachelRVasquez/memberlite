@@ -75,7 +75,7 @@ function memberlite_map_colors_to_settings( array $colors ): array {
 		// New simplified colors (7 core)
 		'color_text'              => $colors['contrast'],
 		'background_color'        => $colors['base'],
-		'bgcolor_header'          => $colors['bgcolor_header'],
+		'bgcolor_header'          => $colors['base'],
 		'color_primary'           => $colors['primary'],
 		'color_secondary'         => $colors['secondary'],
 		'color_borders'           => $colors['border'],
@@ -102,25 +102,26 @@ function memberlite_map_colors_to_settings( array $colors ): array {
  * @return array
  */
 function memberlite_map_legacy_colors_to_settings( array $colors ): array {
+
 	return array(
-		'color_heading'           => $colors[5],  // use body_text for headings
-		'background_color'        => $colors[1],  // site background
-		'bgcolor_header'          => $colors[2],  // header background
-		'bgcolor_site_navigation' => $colors[3],  // nav_bg
-		'color_site_navigation'   => $colors[4],  // nav_text
-		'color_text'              => $colors[5],  // body_text
-		'color_link'              => $colors[6],  // primary
-		'color_meta_link'         => $colors[6],  // primary (same as link)
-		'color_primary'           => $colors[6],  // primary
-		'color_secondary'         => $colors[8],  // secondary
-		'color_action'            => $colors[9],  // action
-		'color_button'            => $colors[10], // button
-		'color_borders'           => $colors[11], // border
-		'bgcolor_page_masthead'   => $colors[0],  // masthead background (same as site background)
-		'color_page_masthead'     => $colors[1],  // masthead text
-		'bgcolor_footer_widgets'  => $colors[13], // footer_bg
-		'color_footer_widgets'    => $colors[14], // footer_text
-		'delimiter'               => $colors[15], // delimiter
+		'color_heading'           => $colors['body_text'],  // use body_text for headings
+		'background_color'        => $colors['background'],  // site background
+		'bgcolor_header'          => $colors['bgcolor_header'],  // header background
+		'bgcolor_site_navigation' => $colors['nav_bg'],  // nav_bg
+		'color_site_navigation'   => $colors['nav_text'],  // nav_text
+		'color_text'              => $colors['body_text'],  // body_text
+		'color_link'              => $colors['primary'],  // primary
+		'color_meta_link'         => $colors['primary'],  // primary (same as link)
+		'color_primary'           => $colors['primary'],  // primary
+		'color_secondary'         => $colors['secondary'],  // secondary
+		'color_action'            => $colors['action'],  // action
+		'color_button'            => $colors['button'], // button
+		'color_borders'           => $colors['border'], // border
+		'bgcolor_page_masthead'   => $colors['masthead_bg'],  // masthead background (same as site background)
+		'color_page_masthead'     => $colors['masthead_text'],  // masthead text
+		'bgcolor_footer_widgets'  => $colors['footer_bg'], // footer_bg
+		'color_footer_widgets'    => $colors['footer_text'], // footer_text
+		'delimiter'               => $colors['delimiter'], // delimiter
 		'color_white'             => '#FFFFFF',
 	);
 }

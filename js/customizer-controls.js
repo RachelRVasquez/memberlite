@@ -1,28 +1,33 @@
 ( function( $ ) {
     // 'use strict';
 
-	console.log(memberliteColorSchemes.activeColors)
+	console.log(memberliteColorSchemes.activeColors);
 
     //Memberlite 4.7+ (Variation) - 7 core colors
     let memberlite_variation_color_controls, memberlite_variation_color_controls_listener_flag;
     memberlite_variation_color_controls = [
-		'memberlite_color_text',
 		'background_color',
-		'memberlite_bgcolor_header',
-		'memberlite_color_page_masthead',
-		'memberlite_color_primary',
-		'memberlite_color_secondary',
-		'memberlite_color_link',
-		'memberlite_color_meta_link',
-		'memberlite_color_button',
-		'memberlite_color_action',
-		'memberlite_bgcolor_page_masthead',
-		'memberlite_bgcolor_site_navigation',
-		'memberlite_color_site_navigation',
-		'memberlite_bgcolor_footer_widgets',
-		'memberlite_color_footer_widgets',
+		'bgcolor_footer_widgets',
+		'bgcolor_header',
+		'bgcolor_page_masthead',
+		'bgcolor_site_navigation',
+		'color_action',
+		'color_button',
+		'color_footer_widgets',
+		'color_heading',
+		'color_link',
+		'color_meta_link',
+		'color_page_masthead',
+		'color_primary',
+		'color_secondary',
+		'color_site_navigation',
+		'color_text',
     ];
     memberlite_variation_color_controls_listener_flag = true;
+
+	//Temporary return while I troubleshoot any PHP index key issues
+	//@todo: Probably don't need to check if a color scheme is legacy or not if the scheme always has 15/16? colors?
+	return;
 
     // Update colors when color scheme changes
     wp.customize('memberlite_variation_color_scheme', function(value) {
