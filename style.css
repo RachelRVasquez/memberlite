@@ -167,6 +167,7 @@ h5,
 h6 {
 	font-family: var(--memberlite-header-font);
 	font-weight: 700;
+    color: var(--memberlite-color-text);
 	margin: 4.25rem 0 1.45rem 0;
 }
 h1,
@@ -2343,7 +2344,7 @@ a:active:not(.pmpro_btn:active) {
 /*--------------------------------------------------------------
 10.6 Comments
 --------------------------------------------------------------*/
-#comments { 
+#comments {
 	margin-bottom:  2.9rem;
 }
 
@@ -2928,7 +2929,7 @@ a:active:not(.pmpro_btn:active) {
 }
 #secondary .widget.widget_pmpro_member_login ul.menu ul.sub-menu {
 	margin-top: 0;
-} 
+}
 #secondary .widget.widget_pmpro_member_login .pmpro_logged_in_welcome_wrap .menu {
 	list-style: none;
 	margin-left: 0;
@@ -3106,7 +3107,7 @@ body.memberlite-banner-hidden .entry-content > .banner:first-child {
 	text-align: left;
 }
 .banner.banner_background-image {
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
 	background-size: cover;
 }
 

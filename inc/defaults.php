@@ -621,13 +621,14 @@ function memberlite_get_active_colors() {
 		// It's a legacy scheme - use legacy color mapping
 		$colors = $legacy_schemes[ $variation_scheme ]['colors'];
 
-
+		error_log(print_r($colors, true));
 
 		return array(
 			'background_color'         => $colors[1],
 			'bgcolor_header'           => $colors[2],
 			'bgcolor_site_navigation'  => $colors[3],
 			'color_site_navigation'    => $colors[4],
+			'color_heading'            => $colors[5],
 			'color_text'               => $colors[5],
 			'color_link'               => isset( $colors[6] ) ? $colors[6] : $colors[5],
 			'color_meta_link'          => isset( $colors[7] ) ? $colors[7] : $colors[6],

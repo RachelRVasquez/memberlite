@@ -815,7 +815,7 @@ class Memberlite_Customize {
 		// Get active colors based on selected scheme
 		$active_colors = memberlite_get_active_colors();
 
-		// Get non-color settings
+		// Get non-color settings (Site Title & Tagline)
 		$header_textcolor = get_theme_mod( 'header_textcolor' );
 		if ( empty( $header_textcolor ) ) {
 			$header_textcolor = $memberlite_defaults['header_textcolor'];
@@ -842,6 +842,7 @@ class Memberlite_Customize {
 				--memberlite-color-site-navigation-background: <?php echo esc_attr( $active_colors['bgcolor_site_navigation'] ); ?>;
 				--memberlite-color-site-navigation: <?php echo esc_attr( $active_colors['color_site_navigation'] ); ?>;
 				--memberlite-color-text: <?php echo esc_attr( $active_colors['color_text'] ); ?>;
+				--memberlite-color-heading: <?php echo esc_attr( $active_colors['color_heading'] ); ?>;
 				--memberlite-color-link: <?php echo esc_attr( $active_colors['color_link'] ); ?>;
 				--memberlite-color-meta-link: <?php echo esc_attr( $active_colors['color_meta_link'] ); ?>;
 				--memberlite-color-primary: <?php echo esc_attr( $active_colors['color_primary'] ); ?>;
@@ -857,7 +858,6 @@ class Memberlite_Customize {
 				--memberlite-color-white: <?php echo esc_attr( $color_white ); ?>;
 
 				/* WordPress theme.json color aliases (map to Customizer colors) */
-				--wp--preset--color--heading: <?php echo esc_attr( $active_colors['memberlite_heading_color'] ); ?>;
 				--wp--preset--color--base: <?php echo esc_attr( $active_colors['background_color'] ); ?>;
 				--wp--preset--color--body-text: <?php echo esc_attr( $active_colors['color_text'] ); ?>;
 				--wp--preset--color--color-primary: <?php echo esc_attr( $active_colors['color_primary'] ); ?>;
@@ -866,7 +866,7 @@ class Memberlite_Customize {
 				--wp--preset--color--border: <?php echo esc_attr( $active_colors['color_borders'] ); ?>;
 				--wp--preset--color--action: <?php echo esc_attr( $active_colors['color_action'] ); ?>;
 				--wp--preset--color--masthead-bg: <?php echo esc_attr( $active_colors['bgcolor_header'] ); ?>;
-				--wp--preset--color--masthead-text: <?php echo esc_attr( $active_colors['memberlite_heading_color'] ); ?>;
+				--wp--preset--color--masthead-text: <?php echo esc_attr( $active_colors['color_page_masthead'] ); ?>;
 				--wp--preset--color--nav-bg: <?php echo esc_attr( $active_colors['bgcolor_site_navigation'] ); ?>;
 				--wp--preset--color--nav-text: <?php echo esc_attr( $active_colors['color_site_navigation'] ); ?>;
 				--wp--preset--color--footer-bg: <?php echo esc_attr( $active_colors['bgcolor_footer_widgets'] ); ?>;
