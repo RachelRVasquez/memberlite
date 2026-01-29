@@ -84,13 +84,13 @@ function memberlite_map_colors_to_settings( array $colors ): array {
 		'color_meta_link'         => $colors['primary'],
 		'color_button'            => $colors['primary'],
 		'color_action'            => $colors['primary'],
-		'bgcolor_page_masthead'   => $colors['primary'],
+		'bgcolor_page_masthead'   => $colors['masthead_bg'],
 		'color_page_masthead'     => $colors['masthead_text'],
 		'bgcolor_site_navigation' => $colors['base'],
 		'color_site_navigation'   => $colors['contrast'],
 		'bgcolor_footer_widgets'  => $colors['base'],
 		'color_footer_widgets'    => $colors['contrast'],
-		'delimiter'               => $colors['border'],
+		'delimiter'               => $colors['base'],
 		'color_white'             => '#FFFFFF',
 	);
 }
@@ -98,29 +98,14 @@ function memberlite_map_colors_to_settings( array $colors ): array {
 /**
  * Map legacy 16-color scheme to full Customizer settings
  *
- * Legacy color array indices:
- * 0 = header background
- * 1 = background
- * 2 = masthead_bg
- * 3 = nav_bg
- * 4 = nav_text
- * 5 = body_text
- * 6 = primary
- * 7 = primary_hover
- * 8 = secondary
- * 9 = action
- * 10 = button
- * 11 = border
- * 12 = masthead_text
- * 13 = footer_bg
- * 14 = footer_text
- * 15 = delimiter
+ * @param array $colors
+ * @return array
  */
 function memberlite_map_legacy_colors_to_settings( array $colors ): array {
 	return array(
-		'color_heading'           => $colors[5],  // heading (different from body text in legacy)
-		'background_color'        => $colors[1],  // background
-		'bgcolor_header'          => $colors[2],  // masthead_bg
+		'color_heading'           => $colors[5],  // use body_text for headings
+		'background_color'        => $colors[1],  // site background
+		'bgcolor_header'          => $colors[2],  // header background
 		'bgcolor_site_navigation' => $colors[3],  // nav_bg
 		'color_site_navigation'   => $colors[4],  // nav_text
 		'color_text'              => $colors[5],  // body_text
@@ -131,8 +116,8 @@ function memberlite_map_legacy_colors_to_settings( array $colors ): array {
 		'color_action'            => $colors[9],  // action
 		'color_button'            => $colors[10], // button
 		'color_borders'           => $colors[11], // border
-		'bgcolor_page_masthead'   => $colors[0],  // heading (reuse)
-		'color_page_masthead'     => $colors[1],  // background (reuse)
+		'bgcolor_page_masthead'   => $colors[0],  // masthead background (same as site background)
+		'color_page_masthead'     => $colors[1],  // masthead text
 		'bgcolor_footer_widgets'  => $colors[13], // footer_bg
 		'color_footer_widgets'    => $colors[14], // footer_text
 		'delimiter'               => $colors[15], // delimiter
