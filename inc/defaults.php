@@ -47,22 +47,22 @@ function memberlite_get_wptavern_colors(): array {
  */
 function memberlite_get_legacy_colors(): array {
 	return array(
-		'heading'       => '#011935',
-		'background'    => '#FFFFFF',
-		'masthead_bg'   => '#FFFFFF',
-		'nav_bg'        => '#F9FAFB',
-		'nav_text'      => '#444444',
-		'body_text'     => '#222222',
-		'primary'       => '#011935',
-		'primary_hover' => '#011935',
-		'secondary'     => '#011935',
-		'action'        => '#00A59D',
-		'button'        => '#E87102',
-		'border'        => '#3C4B5A',
-		'masthead_text' => '#011935',
-		'footer_bg'     => '#FFFFFF',
-		'footer_text'   => '#F9FAFB',
-		'delimiter'     => '#444444',
+		'bgcolor_header' => '#011935',
+		'background'     => '#FFFFFF',
+		'masthead_bg'    => '#FFFFFF',
+		'nav_bg'         => '#F9FAFB',
+		'nav_text'       => '#444444',
+		'body_text'      => '#222222',
+		'primary'        => '#011935',
+		'primary_hover'  => '#011935',
+		'secondary'      => '#011935',
+		'action'         => '#00A59D',
+		'button'         => '#E87102',
+		'border'         => '#3C4B5A',
+		'masthead_text'  => '#011935',
+		'footer_bg'      => '#FFFFFF',
+		'footer_text'    => '#F9FAFB',
+		'delimiter'      => '#444444',
 	);
 }
 
@@ -72,32 +72,24 @@ function memberlite_get_legacy_colors(): array {
  */
 function memberlite_map_colors_to_settings( array $colors ): array {
 	return array(
-		// New simplified colors
+		// New simplified colors (7 core)
 		'color_text'              => $colors['contrast'],
 		'background_color'        => $colors['base'],
-		'bgcolor_header'          => $colors['masthead_bg'],
-		'color_page_masthead'     => $colors['masthead_text'],
+		'bgcolor_header'          => $colors['bgcolor_header'],
 		'color_primary'           => $colors['primary'],
 		'color_secondary'         => $colors['secondary'],
 		'color_borders'           => $colors['border'],
-
-		// Derived/calculated colors based on the 7 core colors
 		'color_heading'           => $colors['contrast'],
 		'color_link'              => $colors['primary'],
 		'color_meta_link'         => $colors['primary'],
 		'color_button'            => $colors['primary'],
 		'color_action'            => $colors['primary'],
 		'bgcolor_page_masthead'   => $colors['primary'],
-
-		// Navigation - derive from masthead or set sensible defaults
-		'bgcolor_site_navigation' => $colors['base'], // or derive
+		'color_page_masthead'     => $colors['masthead_text'],
+		'bgcolor_site_navigation' => $colors['base'],
 		'color_site_navigation'   => $colors['contrast'],
-
-		// Footer - derive from base colors
 		'bgcolor_footer_widgets'  => $colors['base'],
 		'color_footer_widgets'    => $colors['contrast'],
-
-		// Other elements
 		'delimiter'               => $colors['border'],
 		'color_white'             => '#FFFFFF',
 	);
@@ -105,28 +97,46 @@ function memberlite_map_colors_to_settings( array $colors ): array {
 
 /**
  * Map legacy 16-color scheme to full Customizer settings
+ *
+ * Legacy color array indices:
+ * 0 = header background
+ * 1 = background
+ * 2 = masthead_bg
+ * 3 = nav_bg
+ * 4 = nav_text
+ * 5 = body_text
+ * 6 = primary
+ * 7 = primary_hover
+ * 8 = secondary
+ * 9 = action
+ * 10 = button
+ * 11 = border
+ * 12 = masthead_text
+ * 13 = footer_bg
+ * 14 = footer_text
+ * 15 = delimiter
  */
 function memberlite_map_legacy_colors_to_settings( array $colors ): array {
 	return array(
-		'background_color'        => $colors['background'],
-		'bgcolor_header'          => $colors['masthead_bg'],
-		'bgcolor_site_navigation' => $colors['nav_bg'],
-		'color_site_navigation'   => $colors['nav_text'],
-		'color_link'              => $colors['primary'],
-		'color_meta_link'         => $colors['primary'],
-		'color_primary'           => $colors['primary'],
-		'color_secondary'         => $colors['secondary'],
-		'color_action'            => $colors['action'],
-		'color_button'            => $colors['button'],
-		'bgcolor_page_masthead'   => $colors['heading'],
-		'color_page_masthead'     => $colors['background'],
-		'bgcolor_footer_widgets'  => $colors['footer_bg'],
-		'color_footer_widgets'    => $colors['footer_text'],
-		'delimiter'               => $colors['delimiter'],
+		'color_heading'           => $colors[5],  // heading (different from body text in legacy)
+		'background_color'        => $colors[1],  // background
+		'bgcolor_header'          => $colors[2],  // masthead_bg
+		'bgcolor_site_navigation' => $colors[3],  // nav_bg
+		'color_site_navigation'   => $colors[4],  // nav_text
+		'color_text'              => $colors[5],  // body_text
+		'color_link'              => $colors[6],  // primary
+		'color_meta_link'         => $colors[6],  // primary (same as link)
+		'color_primary'           => $colors[6],  // primary
+		'color_secondary'         => $colors[8],  // secondary
+		'color_action'            => $colors[9],  // action
+		'color_button'            => $colors[10], // button
+		'color_borders'           => $colors[11], // border
+		'bgcolor_page_masthead'   => $colors[0],  // heading (reuse)
+		'color_page_masthead'     => $colors[1],  // background (reuse)
+		'bgcolor_footer_widgets'  => $colors[13], // footer_bg
+		'color_footer_widgets'    => $colors[14], // footer_text
+		'delimiter'               => $colors[15], // delimiter
 		'color_white'             => '#FFFFFF',
-		'color_heading'           => $colors['body_text'],
-		'color_text'              => $colors['body_text'],
-		'color_borders'           => $colors['border'],
 	);
 }
 
@@ -293,7 +303,8 @@ function memberlite_get_color_schemes(): array {
 	);
 
 	// Loop through and format colors as array for theme.json
-	foreach ( $schemes as $scheme ) {
+	// IMPORTANT: Use reference (&$scheme) to modify the actual array
+	foreach ( $schemes as &$scheme ) {
 		$scheme['colors'] = memberlite_format_scheme_colors( $scheme['colors'] );
 	}
 
@@ -325,278 +336,278 @@ function memberlite_format_scheme_colors( array $color_defs ): array {
  * @return array<string, array<string, mixed>>
  */
 function memberlite_get_legacy_color_schemes(): array {
-	$schemes       = array(
+	$schemes = array(
 		'default_v4.6'   => array(
 			'label'  => __( 'Default V4.6 (Legacy)', 'memberlite' ),
 			'colors' => array(
-				'#011935',
-				'#FFFFFF',
-				'#FFFFFF',
-				'#F9FAFB',
-				'#444444',
-				'#222222',
-				'#011935',
-				'#011935',
-				'#011935',
-				'#00A59D',
-				'#E87102',
-				'#3C4B5A',
-				'#011935',
-				'#FFFFFF',
-				'#F9FAFB',
-				'#444444',
+				'#011935', // 0. Heading
+				'#FFFFFF', // 1. Background
+				'#FFFFFF', // 2. Masthead BG
+				'#F9FAFB', // 3. Nav BG
+				'#444444', // 4. Nav Text
+				'#222222', // 5. Body Text
+				'#011935', // 6. Primary
+				'#011935', // 7. Primary Hover
+				'#011935', // 8. Secondary
+				'#00A59D', // 9. Action
+				'#E87102', // 10. Button
+				'#3C4B5A', // 11. Border
+				'#011935', // 12. Masthead Text
+				'#FFFFFF', // 13. Footer BG
+				'#F9FAFB', // 14. Footer Text
+				'#444444', // 15. Delimiter
 			),
 		),
 		'default'        => array(
 			'label'  => __( 'Default (Legacy)', 'memberlite' ),
 			'colors' => array(
-				'#2C3E50', // 1. Header BG Color
-				'#FFFFFF', // 2. Background Color
-				'#FFFFFF', // 3. Masthead Background Color
-				'#FAFAFA', // 4. Site Navigation Background Color
-				'#777777', // 5. Site Navigation Text Color
-				'#222222', // 6. Body Text Color
-				'#2C3E50', // 7. Primary Color
-				'#2C3E50', // 8. Primary Color Hover
-				'#2C3E50', // 9. Secondary Color
-				'#18BC9C', // 10. Action Color
-				'#F39C12', // 11. Button Color
-				'#798D8F', // 12. Border Color
-				'#2C3E50', // 13. Masthead Text Color
-				'#FFFFFF', // 14. Footer Widgets Background Color
-				'#2C3E50', // 15. Footer Widgets Text Color
-				'#FFFFFF', // 16. Delimiter Color
+				'#2C3E50', // 0. Heading
+				'#FFFFFF', // 1. Background
+				'#FFFFFF', // 2. Masthead BG
+				'#FAFAFA', // 3. Nav BG
+				'#777777', // 4. Nav Text
+				'#222222', // 5. Body Text
+				'#2C3E50', // 6. Primary
+				'#2C3E50', // 7. Primary Hover
+				'#2C3E50', // 8. Secondary
+				'#18BC9C', // 9. Action
+				'#F39C12', // 10. Button
+				'#798D8F', // 11. Border
+				'#2C3E50', // 12. Masthead Text
+				'#FFFFFF', // 13. Footer BG
+				'#2C3E50', // 14. Footer Text
+				'#FFFFFF', // 15. Delimiter
 			),
 		),
 		'education'      => array(
 			'label'  => __( 'Education (Legacy)', 'memberlite' ),
 			'colors' => array(
-				'#3A9AD9', // 1. Header BG Color
-				'#F4EFEA', // 2. Background Color
-				'#F4EFEA', // 3. Masthead Background Color
-				'#E2DED9', // 4. Site Navigation Background Color
-				'#354458', // 5. Site Navigation Text Color
-				'#222222', // 6. Body Text Color
-				'#3A9AD9', // 7. Primary Color
-				'#3A9AD9', // 8. Primary Color Hover
-				'#354458', // 9. Secondary Color
-				'#EB7260', // 10. Action Color
-				'#29ABA4', // 11. Button Color
-				'#798D8F', // 12. Border Color
-				'#354458', // 13. Masthead Text Color
-				'#FFFFFF', // 14. Footer Widgets Background Color
-				'#354458', // 15. Footer Widgets Text Color
-				'#FFFFFF', // 16. Delimiter Color
+				'#3A9AD9', // 0. Heading
+				'#F4EFEA', // 1. Background
+				'#F4EFEA', // 2. Masthead BG
+				'#E2DED9', // 3. Nav BG
+				'#354458', // 4. Nav Text
+				'#222222', // 5. Body Text
+				'#3A9AD9', // 6. Primary
+				'#3A9AD9', // 7. Primary Hover
+				'#354458', // 8. Secondary
+				'#EB7260', // 9. Action
+				'#29ABA4', // 10. Button
+				'#798D8F', // 11. Border
+				'#354458', // 12. Masthead Text
+				'#FFFFFF', // 13. Footer BG
+				'#354458', // 14. Footer Text
+				'#FFFFFF', // 15. Delimiter
 			),
 		),
 		'modern_teal'    => array(
 			'label'  => __( 'Modern Teal (Legacy)', 'memberlite' ),
 			'colors' => array(
-				'#424242', // 1. Header BG Color
-				'#EFEFEF', // 2. Background Color
-				'#EFEFEF', // 3. Masthead Background Color
-				'#424242', // 4. Site Navigation Background Color
-				'#EFEFEF', // 5. Site Navigation Text Color
-				'#222222', // 6. Body Text Color
-				'#00CCD6', // 7. Primary Color
-				'#00CCD6', // 8. Primary Color Hover
-				'#00CCD6', // 9. Secondary Color
-				'#424242', // 10. Action Color
-				'#FFD900', // 11. Button Color
-				'#798D8F', // 12. Border Color
-				'#00CCD6', // 13. Masthead Text Color
-				'#FFFFFF', // 14. Footer Widgets Background Color
-				'#00CCD6', // 15. Footer Widgets Text Color
-				'#FFFFFF', // 16. Delimiter Color
+				'#424242', // 0. Heading
+				'#EFEFEF', // 1. Background
+				'#EFEFEF', // 2. Masthead BG
+				'#424242', // 3. Nav BG
+				'#EFEFEF', // 4. Nav Text
+				'#222222', // 5. Body Text
+				'#00CCD6', // 6. Primary
+				'#00CCD6', // 7. Primary Hover
+				'#00CCD6', // 8. Secondary
+				'#424242', // 9. Action
+				'#FFD900', // 10. Button
+				'#798D8F', // 11. Border
+				'#00CCD6', // 12. Masthead Text
+				'#FFFFFF', // 13. Footer BG
+				'#00CCD6', // 14. Footer Text
+				'#FFFFFF', // 15. Delimiter
 			),
 		),
 		'mono_blue'      => array(
 			'label'  => __( 'Mono Blue (Legacy)', 'memberlite' ),
 			'colors' => array(
-				'#00AEEF', // 1. Header BG Color
-				'#FFFFFF', // 2. Background Color
-				'#FFFFFF', // 3. Masthead Background Color
-				'#00AEEF', // 4. Site Navigation Background Color
-				'#FFFFFF', // 5. Site Navigation Text Color
-				'#222222', // 6. Body Text Color
-				'#00AEEF', // 7. Primary Color
-				'#00AEEF', // 8. Primary Color Hover
-				'#333333', // 9. Secondary Color
-				'#555555', // 10. Action Color
-				'#00AEEF', // 11. Button Color
-				'#798D8F', // 12. Border Color
-				'#333333', // 13. Masthead Text Color
-				'#FFFFFF', // 14. Footer Widgets Background Color
-				'#333333', // 15. Footer Widgets Text Color
-				'#FFFFFF', // 16. Delimiter Color
+				'#00AEEF', // 0. Heading
+				'#FFFFFF', // 1. Background
+				'#FFFFFF', // 2. Masthead BG
+				'#00AEEF', // 3. Nav BG
+				'#FFFFFF', // 4. Nav Text
+				'#222222', // 5. Body Text
+				'#00AEEF', // 6. Primary
+				'#00AEEF', // 7. Primary Hover
+				'#333333', // 8. Secondary
+				'#555555', // 9. Action
+				'#00AEEF', // 10. Button
+				'#798D8F', // 11. Border
+				'#333333', // 12. Masthead Text
+				'#FFFFFF', // 13. Footer BG
+				'#333333', // 14. Footer Text
+				'#FFFFFF', // 15. Delimiter
 			),
 		),
 		'mono_green'     => array(
 			'label'  => __( 'Mono Green (Legacy)', 'memberlite' ),
 			'colors' => array(
-				'#00A651', // 1. Header BG Color
-				'#FFFFFF', // 2. Background Color
-				'#FFFFFF', // 3. Masthead Background Color
-				'#00A651', // 4. Site Navigation Background Color
-				'#FFFFFF', // 5. Site Navigation Text Color
-				'#222222', // 6. Body Text Color
-				'#00A651', // 7. Primary Color
-				'#00A651', // 8. Primary Color Hover
-				'#333333', // 9. Secondary Color
-				'#555555', // 10. Action Color
-				'#00A651', // 11. Button Color
-				'#798D8F', // 12. Border Color
-				'#333333', // 13. Masthead Text Color
-				'#FFFFFF', // 14. Footer Widgets Background Color
-				'#333333', // 15. Footer Widgets Text Color
-				'#FFFFFF', // 16. Delimiter Color
+				'#00A651', // 0. Heading
+				'#FFFFFF', // 1. Background
+				'#FFFFFF', // 2. Masthead BG
+				'#00A651', // 3. Nav BG
+				'#FFFFFF', // 4. Nav Text
+				'#222222', // 5. Body Text
+				'#00A651', // 6. Primary
+				'#00A651', // 7. Primary Hover
+				'#333333', // 8. Secondary
+				'#555555', // 9. Action
+				'#00A651', // 10. Button
+				'#798D8F', // 11. Border
+				'#333333', // 12. Masthead Text
+				'#FFFFFF', // 13. Footer BG
+				'#333333', // 14. Footer Text
+				'#FFFFFF', // 15. Delimiter
 			),
 		),
 		'mono_orange'    => array(
 			'label'  => __( 'Mono Orange (Legacy)', 'memberlite' ),
 			'colors' => array(
-				'#F39C12', // 1. Header BG Color
-				'#FFFFFF', // 2. Background Color
-				'#FFFFFF', // 3. Masthead Background Color
-				'#F39C12', // 4. Site Navigation Background Color
-				'#FFFFFF', // 5. Site Navigation Text Color
-				'#222222', // 6. Body Text Color
-				'#F39C12', // 7. Primary Color
-				'#F39C12', // 8. Primary Color Hover
-				'#333333', // 9. Secondary Color
-				'#555555', // 10. Action Color
-				'#F39C12', // 11. Button Color
-				'#798D8F', // 12. Border Color
-				'#333333', // 13. Masthead Text Color
-				'#FFFFFF', // 14. Footer Widgets Background Color
-				'#333333', // 15. Footer Widgets Text Color
-				'#FFFFFF', // 16. Delimiter Color
+				'#F39C12', // 0. Heading
+				'#FFFFFF', // 1. Background
+				'#FFFFFF', // 2. Masthead BG
+				'#F39C12', // 3. Nav BG
+				'#FFFFFF', // 4. Nav Text
+				'#222222', // 5. Body Text
+				'#F39C12', // 6. Primary
+				'#F39C12', // 7. Primary Hover
+				'#333333', // 8. Secondary
+				'#555555', // 9. Action
+				'#F39C12', // 10. Button
+				'#798D8F', // 11. Border
+				'#333333', // 12. Masthead Text
+				'#FFFFFF', // 13. Footer BG
+				'#333333', // 14. Footer Text
+				'#FFFFFF', // 15. Delimiter
 			),
 		),
 		'mono_pink'      => array(
 			'label'  => __( 'Mono Pink (Legacy)', 'memberlite' ),
 			'colors' => array(
-				'#ED0977', // 1. Header BG Color
-				'#FFFFFF', // 2. Background Color
-				'#FFFFFF', // 3. Masthead Background Color
-				'#ED0977', // 4. Site Navigation Background Color
-				'#FFFFFF', // 5. Site Navigation Text Color
-				'#222222', // 6. Body Text Color
-				'#ED0977', // 7. Primary Color
-				'#ED0977', // 8. Primary Color Hover
-				'#333333', // 9. Secondary Color
-				'#555555', // 10. Action Color
-				'#ED0977', // 11. Button Color
-				'#798D8F', // 12. Border Color
-				'#333333', // 13. Masthead Text Color
-				'#FFFFFF', // 14. Footer Widgets Background Color
-				'#333333', // 15. Footer Widgets Text Color
-				'#FFFFFF', // 16. Delimiter Color
+				'#ED0977', // 0. Heading
+				'#FFFFFF', // 1. Background
+				'#FFFFFF', // 2. Masthead BG
+				'#ED0977', // 3. Nav BG
+				'#FFFFFF', // 4. Nav Text
+				'#222222', // 5. Body Text
+				'#ED0977', // 6. Primary
+				'#ED0977', // 7. Primary Hover
+				'#333333', // 8. Secondary
+				'#555555', // 9. Action
+				'#ED0977', // 10. Button
+				'#798D8F', // 11. Border
+				'#333333', // 12. Masthead Text
+				'#FFFFFF', // 13. Footer BG
+				'#333333', // 14. Footer Text
+				'#FFFFFF', // 15. Delimiter
 			),
 		),
 		'pop'            => array(
 			'label'  => __( 'Pop! (Legacy)', 'memberlite' ),
 			'colors' => array(
-				'#53BBF4', // 1. Header BG Color
-				'#FFFFFF', // 2. Background Color
-				'#FFFFFF', // 3. Masthead Background Color
-				'#B1EB00', // 4. Site Navigation Background Color
-				'#666666', // 5. Site Navigation Text Color
-				'#222222', // 6. Body Text Color
-				'#B1EB00', // 7. Primary Color
-				'#B1EB00', // 8. Primary Color Hover
-				'#53BBF4', // 9. Secondary Color
-				'#FFAC00', // 10. Action Color
-				'#FF85CB', // 11. Button Color
-				'#798D8F', // 12. Border Color
-				'#53BBF4', // 13. Masthead Text Color
-				'#FFFFFF', // 14. Footer Widgets Background Color
-				'#53BBF4', // 15. Footer Widgets Text Color
-				'#FFFFFF', // 16. Delimiter Color
+				'#53BBF4', // 0. Heading
+				'#FFFFFF', // 1. Background
+				'#FFFFFF', // 2. Masthead BG
+				'#B1EB00', // 3. Nav BG
+				'#666666', // 4. Nav Text
+				'#222222', // 5. Body Text
+				'#B1EB00', // 6. Primary
+				'#B1EB00', // 7. Primary Hover
+				'#53BBF4', // 8. Secondary
+				'#FFAC00', // 9. Action
+				'#FF85CB', // 10. Button
+				'#798D8F', // 11. Border
+				'#53BBF4', // 12. Masthead Text
+				'#FFFFFF', // 13. Footer BG
+				'#53BBF4', // 14. Footer Text
+				'#FFFFFF', // 15. Delimiter
 			),
 		),
 		'primary'        => array(
 			'label'  => __( 'Not So Primary (Legacy)', 'memberlite' ),
 			'colors' => array(
-				'#1352A2', // 1. Header BG Color
-				'#F0F1EE', // 2. Background Color
-				'#F0F1EE', // 3. Masthead Background Color
-				'#FFFFFF', // 4. Site Navigation Background Color
-				'#555555', // 5. Site Navigation Text Color
-				'#222222', // 6. Body Text Color
-				'#FB6964', // 7. Primary Color
-				'#FB6964', // 8. Primary Color Hover
-				'#1352A2', // 9. Secondary Color
-				'#FB6964', // 10. Action Color
-				'#FFD464', // 11. Button Color
-				'#798D8F', // 12. Border Color
-				'#1352A2', // 13. Masthead Text Color
-				'#FFFFFF', // 14. Footer Widgets Background Color
-				'#1352A2', // 15. Footer Widgets Text Color
-				'#FFFFFF', // 16. Delimiter Color
+				'#1352A2', // 0. Heading
+				'#F0F1EE', // 1. Background
+				'#F0F1EE', // 2. Masthead BG
+				'#FFFFFF', // 3. Nav BG
+				'#555555', // 4. Nav Text
+				'#222222', // 5. Body Text
+				'#FB6964', // 6. Primary
+				'#FB6964', // 7. Primary Hover
+				'#1352A2', // 8. Secondary
+				'#FB6964', // 9. Action
+				'#FFD464', // 10. Button
+				'#798D8F', // 11. Border
+				'#1352A2', // 12. Masthead Text
+				'#FFFFFF', // 13. Footer BG
+				'#1352A2', // 14. Footer Text
+				'#FFFFFF', // 15. Delimiter
 			),
 		),
 		'raspberry_lime' => array(
 			'label'  => __( 'Raspberry Lime (Legacy)', 'memberlite' ),
 			'colors' => array(
-				'#AA2159', // 1. Header BG Color
-				'#FFFFFF', // 2. Background Color
-				'#FFFFFF', // 3. Masthead Background Color
-				'#700035', // 4. Site Navigation Background Color
-				'#EFEFEF', // 5. Site Navigation Text Color
-				'#222222', // 6. Body Text Color
-				'#009D97', // 7. Primary Color
-				'#AA2159', // 8. Primary Color Hover
-				'#AA2159', // 9. Secondary Color
-				'#009D97', // 10. Action Color
-				'#BCC747', // 11. Button Color
-				'#798D8F', // 12. Border Color
-				'#AA2159', // 13. Masthead Text Color
-				'#FFFFFF', // 14. Footer Widgets Background Color
-				'#AA2159', // 15. Footer Widgets Text Color
-				'#FFFFFF', // 16. Delimiter Color
+				'#AA2159', // 0. Heading
+				'#FFFFFF', // 1. Background
+				'#FFFFFF', // 2. Masthead BG
+				'#700035', // 3. Nav BG
+				'#EFEFEF', // 4. Nav Text
+				'#222222', // 5. Body Text
+				'#009D97', // 6. Primary
+				'#AA2159', // 7. Primary Hover
+				'#AA2159', // 8. Secondary
+				'#009D97', // 9. Action
+				'#BCC747', // 10. Button
+				'#798D8F', // 11. Border
+				'#AA2159', // 12. Masthead Text
+				'#FFFFFF', // 13. Footer BG
+				'#AA2159', // 14. Footer Text
+				'#FFFFFF', // 15. Delimiter
 			),
 		),
 		'slate_blue'     => array(
 			'label'  => __( 'Slate Blue (Legacy)', 'memberlite' ),
 			'colors' => array(
-				'#6991AC', // 1. Header BG Color
-				'#F5F5F5', // 2. Background Color
-				'#F5F5F5', // 3. Masthead Background Color
-				'#FFFFFF', // 4. Site Navigation Background Color
-				'#67727A', // 5. Site Navigation Text Color
-				'#222222', // 6. Body Text Color
-				'#6991AC', // 7. Primary Color
-				'#6991AC', // 8. Primary Color Hover
-				'#67727A', // 9. Secondary Color
-				'#6991AC', // 10. Action Color
-				'#D75C37', // 11. Button Color
-				'#798D8F', // 12. Border Color
-				'#67727A', // 13. Masthead Text Color
-				'#FFFFFF', // 14. Footer Widgets Background Color
-				'#67727A', // 15. Footer Widgets Text Color
-				'#FFFFFF', // 16. Delimiter Color
+				'#6991AC', // 0. Heading
+				'#F5F5F5', // 1. Background
+				'#F5F5F5', // 2. Masthead BG
+				'#FFFFFF', // 3. Nav BG
+				'#67727A', // 4. Nav Text
+				'#222222', // 5. Body Text
+				'#6991AC', // 6. Primary
+				'#6991AC', // 7. Primary Hover
+				'#67727A', // 8. Secondary
+				'#6991AC', // 9. Action
+				'#D75C37', // 10. Button
+				'#798D8F', // 11. Border
+				'#67727A', // 12. Masthead Text
+				'#FFFFFF', // 13. Footer BG
+				'#67727A', // 14. Footer Text
+				'#FFFFFF', // 15. Delimiter
 			),
 		),
 		'watermelon'     => array(
 			'label'  => __( 'Watermelon Seed (Legacy)', 'memberlite' ),
 			'colors' => array(
-				'#363635', // 1. Header BG Color
-				'#F9F9F7', // 2. Background Color
-				'#F9F9F7', // 3. Masthead Background Color
-				'#363635', // 4. Site Navigation Background Color
-				'#FFFFFF', // 5. Site Navigation Text Color
-				'#222222', // 6. Body Text Color
-				'#83BF17', // 7. Primary Color
-				'#83BF17', // 8. Primary Color Hover
-				'#83BF17', // 9. Secondary Color
-				'#363635', // 10. Action Color
-				'#F15D58', // 11. Button Color
-				'#798D8F', // 12. Border Color
-				'#83BF17', // 13. Masthead Text Color
-				'#FFFFFF', // 14. Footer Widgets Background Color
-				'#83BF17', // 15. Footer Widgets Text Color
-				'#FFFFFF', // 16. Delimiter Color
+				'#363635', // 0. Heading
+				'#F9F9F7', // 1. Background
+				'#F9F9F7', // 2. Masthead BG
+				'#363635', // 3. Nav BG
+				'#FFFFFF', // 4. Nav Text
+				'#222222', // 5. Body Text
+				'#83BF17', // 6. Primary
+				'#83BF17', // 7. Primary Hover
+				'#83BF17', // 8. Secondary
+				'#363635', // 9. Action
+				'#F15D58', // 10. Button
+				'#798D8F', // 11. Border
+				'#83BF17', // 12. Masthead Text
+				'#FFFFFF', // 13. Footer BG
+				'#83BF17', // 14. Footer Text
+				'#FFFFFF', // 15. Delimiter
 			),
 		),
 	);
@@ -615,50 +626,29 @@ function memberlite_get_active_colors() {
 
 	$variation_scheme = get_theme_mod( 'memberlite_variation_color_scheme', 'default_2026' );
 
-	// Check if it's a legacy scheme (by checking if it exists in legacy schemes)
+	// Check if it's a legacy scheme
 	$legacy_schemes = memberlite_get_legacy_color_schemes();
 	if ( isset( $legacy_schemes[ $variation_scheme ] ) ) {
-		// It's a legacy scheme - use legacy color mapping
+		// Use the mapping function for consistency
 		$colors = $legacy_schemes[ $variation_scheme ]['colors'];
 
-		error_log(print_r($colors, true));
-
-		return array(
-			'background_color'         => $colors[1],
-			'bgcolor_header'           => $colors[2],
-			'bgcolor_site_navigation'  => $colors[3],
-			'color_site_navigation'    => $colors[4],
-			'color_heading'            => $colors[5],
-			'color_text'               => $colors[5],
-			'color_link'               => isset( $colors[6] ) ? $colors[6] : $colors[5],
-			'color_meta_link'          => isset( $colors[7] ) ? $colors[7] : $colors[6],
-			'color_primary'            => isset( $colors[8] ) ? $colors[8] : $colors[0],
-			'color_secondary'          => isset( $colors[9] ) ? $colors[9] : $colors[0],
-			'color_action'             => isset( $colors[10] ) ? $colors[10] : $colors[8],
-			'color_button'             => isset( $colors[11] ) ? $colors[11] : $colors[8],
-			'color_borders'            => isset( $colors[12] ) ? $colors[12] : '#cccccc',
-			'bgcolor_page_masthead'    => isset( $colors[13] ) ? $colors[13] : $colors[0],
-			'color_page_masthead'      => isset( $colors[14] ) ? $colors[14] : $colors[1],
-			'bgcolor_footer_widgets'   => isset( $colors[15] ) ? $colors[15] : $colors[1],
-			'color_footer_widgets'     => isset( $colors[16] ) ? $colors[16] : $colors[5],
-		);
+		return memberlite_map_legacy_colors_to_settings( $colors );
 	}
 
 	// Check if it's a new variation scheme
 	$new_schemes = memberlite_get_color_schemes();
-
 	if ( isset( $new_schemes[ $variation_scheme ] ) ) {
 		// It's a new scheme - use new color mapping
-		// Build the function name dynamically
+		// Dynamically call the appropriate function
 		if ( $variation_scheme === 'default_2026' ) {
 			$color_array = memberlite_get_colors();
 		} else {
-			// Dynamically call the appropriate function: memberlite_get_{scheme}_colors()
+			// Build function name: memberlite_get_{scheme}_colors()
 			$function_name = 'memberlite_get_' . $variation_scheme . '_colors';
 			if ( function_exists( $function_name ) ) {
 				$color_array = call_user_func( $function_name );
 			} else {
-				// Fallback to default if function doesn't exist
+				// Fallback to default
 				$color_array = memberlite_get_colors();
 			}
 		}
@@ -674,6 +664,7 @@ function memberlite_get_active_colors() {
 		'bgcolor_site_navigation',
 		'color_site_navigation',
 		'color_text',
+		'color_heading',
 		'color_link',
 		'color_meta_link',
 		'color_primary',
@@ -685,7 +676,6 @@ function memberlite_get_active_colors() {
 		'bgcolor_footer_widgets',
 		'color_footer_widgets',
 		'color_borders',
-		'memberlite_color_heading',
 	);
 
 	foreach ( $color_keys as $key ) {
@@ -697,7 +687,7 @@ function memberlite_get_active_colors() {
 }
 
 // Globals
-global $memberlite_defaults, $memberlite_color_schemes, $memberlite_legacy_color_schemes, $memberlite_defaults_news, $memberlite_defaults_wptavern;
+global $memberlite_defaults, $memberlite_color_schemes, $memberlite_legacy_color_schemes, $memberlite_defaults_news, $memberlite_defaults_wptavern, $memberlite_defaults_legacy;
 
 $memberlite_defaults             = memberlite_get_defaults();
 $memberlite_defaults_news        = memberlite_get_defaults_news();

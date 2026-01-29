@@ -352,7 +352,7 @@ class Memberlite_Customize {
 			$background_color_control->priority = 12;
 		}
 
-		self::add_memberlite_color_control( $wp_customize, 'memberlite_color_headings', 'Default Heading Color', 'color_text' );
+		self::add_memberlite_color_control( $wp_customize, 'memberlite_color_heading', 'Default Heading Color', 'color_heading' );
 
 		self::add_memberlite_color_control( $wp_customize, 'memberlite_color_text', 'Default Text Color', 'color_text' );
 
