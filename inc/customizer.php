@@ -352,6 +352,8 @@ class Memberlite_Customize {
 			$background_color_control->priority = 12;
 		}
 
+		self::add_memberlite_color_control( $wp_customize, 'memberlite_color_headings', 'Default Heading Color', 'color_text' );
+
 		self::add_memberlite_color_control( $wp_customize, 'memberlite_color_text', 'Default Text Color', 'color_text' );
 
 		self::add_memberlite_color_control( $wp_customize, 'memberlite_color_link', 'Default Link Color', 'color_link' );
@@ -1021,24 +1023,6 @@ class Memberlite_Customize {
 	}
 
 	/**
-	 * Returns an array of legacy (4.6 and earlier) color scheme choices registered for Memberlite.
-	 *
-	 * @return array Array of color schemes.
-	 * @since Memberlite 2.0
-	 *
-	 */
-	public static function get_legacy_color_scheme_choices() {
-		$color_schemes                = memberlite_get_legacy_color_schemes(); // Call global function from defaults.php
-		$color_scheme_control_options = array();
-
-		foreach ( $color_schemes as $color_scheme => $value ) {
-			$color_scheme_control_options[ $color_scheme ] = $value['label'];
-		}
-
-		return $color_scheme_control_options;
-	}
-
-	/**
 	 * Sanitize Checkbox input values
 	 *
 	 * @since Memberlite 3.0
@@ -1102,19 +1086,6 @@ class Memberlite_Customize {
 
 		if ( ! in_array( $value, $valid_schemes ) ) {
 			$value = 'default_2026';
-		}
-
-		return esc_js( $value );
-	}
-
-	public static function sanitize_js_color_scheme( $value ) {
-		$color_schemes = array_merge(
-			Memberlite_Customize::get_color_scheme_choices(),
-			array( 'custom' => 'Custom', )
-		);
-
-		if ( ! array_key_exists( $value, $color_schemes ) ) {
-			$value = 'default';
 		}
 
 		return esc_js( $value );
@@ -1190,6 +1161,7 @@ class Memberlite_Customize {
 			array(
 				'new'    => Memberlite_Customize::get_color_schemes(),
 				'legacy' => Memberlite_Customize::get_legacy_color_schemes(),
+                'activeColors' => memberlite_get_active_colors(),
 			)
 		);
 

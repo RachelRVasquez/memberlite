@@ -14,6 +14,7 @@
 			);
 		}
 	);
+
 	wp.customize(
 		'blogdescription', function( setting ) {
 			setting.bind(
@@ -23,6 +24,7 @@
 			);
 		}
 	);
+
 	// Header text color.
 	wp.customize(
 		'header_textcolor', function( setting ) {
@@ -66,6 +68,14 @@
 			);
 		}
 	);
+
+	// Handle color scheme changes
+	wp.customize( 'memberlite_variation_color_scheme', function( value ) {
+		value.bind( function( newScheme ) {
+			wp.customize.previewer.refresh();
+		});
+	});
+
 	// Body Background Color.
 	wp.customize(
 		'background_color', function( setting ) {
@@ -77,6 +87,7 @@
 			);
 		}
 	);
+
 	// Header Background Color.
 	wp.customize(
 		'bgcolor_header', function( setting ) {
@@ -88,6 +99,7 @@
 			);
 		}
 	);
+
 	// Primary Navigation Background Color.
 	wp.customize(
 		'bgcolor_site_navigation', function( setting ) {
@@ -99,6 +111,7 @@
 			);
 		}
 	);
+
 	// Primary Navigation Color.
 	wp.customize(
 		'color_site_navigation', function( setting ) {
@@ -110,6 +123,7 @@
 			);
 		}
 	);
+
 	// Link Color.
 	wp.customize(
 		'color_link', function( setting ) {
@@ -121,6 +135,7 @@
 			);
 		}
 	);
+
 	// Meta Link Color.
 	wp.customize(
 		'color_meta_link', function( setting ) {
@@ -132,6 +147,7 @@
 			);
 		}
 	);
+
 	// Primary Color.
 	wp.customize(
 		'color_primary', function( setting ) {
@@ -143,6 +159,7 @@
 			);
 		}
 	);
+
 	// Secondary Color.
 	wp.customize(
 		'color_secondary', function( setting ) {
@@ -154,6 +171,7 @@
 			);
 		}
 	);
+
 	// Action Color.
 	wp.customize(
 		'color_action', function( setting ) {
@@ -165,6 +183,7 @@
 			);
 		}
 	);
+
 	// Button Color.
 		wp.customize(
 		'color_button', function( setting ) {
@@ -176,6 +195,7 @@
 			);
 		}
 	);
+
 	// Page Masthead Background Color.
 	wp.customize(
 		'bgcolor_page_masthead', function( setting ) {
@@ -187,6 +207,7 @@
 			);
 		}
 	);
+
 	// Footer Widgets Color.
 	wp.customize(
 		'color_page_masthead', function( setting ) {
@@ -198,6 +219,7 @@
 			);
 		}
 	);
+
 	// Footer Widgets Background Color.
 	wp.customize(
 		'bgcolor_footer_widgets', function( setting ) {
@@ -209,6 +231,7 @@
 			);
 		}
 	);
+
 	// Footer Widgets Color.
 	wp.customize(
 		'color_footer_widgets', function( setting ) {
@@ -220,6 +243,7 @@
 			);
 		}
 	);
+
 	wp.customize(
 		'delimiter', function( setting ) {
 			setting.bind(
@@ -229,6 +253,7 @@
 			);
 		}
 	);
+
 	wp.customize(
 		'posts_entry_meta_before', function( setting ) {
 			setting.bind(
@@ -238,6 +263,7 @@
 			);
 		}
 	);
+
 	wp.customize(
 		'posts_entry_meta_after', function( setting ) {
 			setting.bind(
@@ -247,6 +273,7 @@
 			);
 		}
 	);
+
 	wp.customize(
 		'copyright_textbox', function( setting ) {
 			setting.bind(
@@ -257,37 +284,37 @@
 		}
 	);
 
-    // Handle PMPro color override checkbox
-    wp.customize( 'memberlite_pmpro_color_override', function( value ) {
-        value.bind( function( isChecked ) {
-            if ( isChecked && memberliteCustomizerPreview.isPMProActive ) {
-                // Override PMPro colors with theme colors
-                updatePMProColors();
-            } else {
-                // Remove overrides (let PMPro plugin handle its own colors)
-                removePMProColorOverrides();
-            }
-        });
-    });
+	// Handle PMPro color override checkbox
+	wp.customize( 'memberlite_pmpro_color_override', function( value ) {
+		value.bind( function( isChecked ) {
+			if ( isChecked && memberliteCustomizerPreview.isPMProActive ) {
+				// Override PMPro colors with theme colors
+				updatePMProColors();
+			} else {
+				// Remove overrides (let PMPro plugin handle its own colors)
+				removePMProColorOverrides();
+			}
+		});
+	});
 
-    function updatePMProColors() {
-        var style = '<style id="memberlite-pmpro-color-override">';
-        style += ':root {';
-        style += '--pmpro--color--accent: ' + memberliteCustomizerPreview.activeColors.color_primary + ';';
-        style += '--pmpro--color--accent--variation: ' + memberliteCustomizerPreview.activeColors.color_secondary + ';';
-        style += '--pmpro--color--base: ' + memberliteCustomizerPreview.activeColors.background_color + ';';
-        style += '--pmpro--color--contrast: ' + memberliteCustomizerPreview.activeColors.color_text + ';';
-        style += '}';
-        style += '</style>';
+	function updatePMProColors() {
+		var style = '<style id="memberlite-pmpro-color-override">';
+		style += ':root {';
+		style += '--pmpro--color--accent: ' + memberliteCustomizerPreview.activeColors.color_primary + ';';
+		style += '--pmpro--color--accent--variation: ' + memberliteCustomizerPreview.activeColors.color_secondary + ';';
+		style += '--pmpro--color--base: ' + memberliteCustomizerPreview.activeColors.background_color + ';';
+		style += '--pmpro--color--contrast: ' + memberliteCustomizerPreview.activeColors.color_text + ';';
+		style += '}';
+		style += '</style>';
 
-        // Remove existing override if present
-        $('#memberlite_pmpro_color_override').remove();
-        // Add new override
-        $('head').append( style );
-    }
+		// Remove existing override if present
+		$('#memberlite_pmpro_color_override').remove();
+		// Add new override
+		$('head').append( style );
+	}
 
-    function removePMProColorOverrides() {
-        $('#memberlite-pmpro-color-override').remove();
-    }
+	function removePMProColorOverrides() {
+		$('#memberlite-pmpro-color-override').remove();
+	}
 
 } )( jQuery );

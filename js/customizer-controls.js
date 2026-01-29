@@ -1,16 +1,26 @@
 ( function( $ ) {
     // 'use strict';
 
+	console.log(memberliteColorSchemes.activeColors)
+
     //Memberlite 4.7+ (Variation) - 7 core colors
     let memberlite_variation_color_controls, memberlite_variation_color_controls_listener_flag;
     memberlite_variation_color_controls = [
-        'memberlite_color_text',
-        'background_color',
-        'memberlite_bgcolor_header',
-        'memberlite_color_page_masthead',
-        'memberlite_color_primary',
-        'memberlite_color_secondary',
-        'memberlite_color_borders',
+		'memberlite_color_text',
+		'background_color',
+		'memberlite_bgcolor_header',
+		'memberlite_color_page_masthead',
+		'memberlite_color_primary',
+		'memberlite_color_secondary',
+		'memberlite_color_link',
+		'memberlite_color_meta_link',
+		'memberlite_color_button',
+		'memberlite_color_action',
+		'memberlite_bgcolor_page_masthead',
+		'memberlite_bgcolor_site_navigation',
+		'memberlite_color_site_navigation',
+		'memberlite_bgcolor_footer_widgets',
+		'memberlite_color_footer_widgets',
     ];
     memberlite_variation_color_controls_listener_flag = true;
 
@@ -68,8 +78,17 @@
                         $('#customize-control-' + controlId)
                             .find('.color-picker-hex')
                             .wpColorPicker('color', colors[colorIndex]);
+
+						//Update the actual setting
+						if (wp.customize(controlId)) {
+							wp.customize(controlId).set(color);
+						}
                     }
                 });
+
+				setTimeout(function() {
+					memberlite_variation_color_controls_listener_flag = true;
+				}, 100);
             } else {
                 // New scheme - update 7 color controls
                 for (var i = 0; i < 7 && i < colors.length; i++) {
@@ -104,46 +123,29 @@
                     headerTextColor = headerTextColor.substring(1); // Remove # for WordPress core
                 }
                 wp.customize('header_textcolor').set(headerTextColor);
-            }
 
-            memberlite_variation_color_controls_listener_flag = true;
+				setTimeout(function() {
+					memberlite_variation_color_controls_listener_flag = true;
+				}, 100);
+            }
         });
     });
 
-    // When any color is manually changed, set to custom
-    // We need to watch ALL color controls, not just the 7 core ones
-    var allColorControls = [
-        'memberlite_color_text',
-        'background_color',
-        'header_textcolor',
-        'memberlite_bgcolor_header',
-        'memberlite_color_page_masthead',
-        'memberlite_color_primary',
-        'memberlite_color_secondary',
-        'memberlite_color_borders',
-        'memberlite_color_link',
-        'memberlite_color_meta_link',
-        'memberlite_color_button',
-        'memberlite_color_action',
-        'memberlite_bgcolor_page_masthead',
-        'memberlite_bgcolor_site_navigation',
-        'memberlite_color_site_navigation',
-        'memberlite_bgcolor_footer_widgets',
-        'memberlite_color_footer_widgets',
-    ];
-
-    for (var i = 0; i < allColorControls.length; i++) {
+    for (var i = 0; i < memberlite_variation_color_controls.length; i++) {
         (function(controlId) {
             wp.customize(controlId, function(value) {
                 value.bind(function(to) {
+					console.log( 'memberlite_variation_color_controls_listener_flag ', memberlite_variation_color_controls_listener_flag);
+					console.log( "wp.customize('memberlite_variation_color_scheme')()", wp.customize('memberlite_variation_color_scheme')() );
+
                     if (memberlite_variation_color_controls_listener_flag) {
                         var currentScheme = wp.customize('memberlite_variation_color_scheme')();
                         if (currentScheme !== 'custom') {
-                            wp.customize('memberlite_variation_color_scheme').set('custom');
+							$( '#customize-control-memberlite_variation_color_scheme' ).find( 'select' ).val( 'custom' ).change();
                         }
                     }
                 });
             });
-        })(allColorControls[i]);
+        })(memberlite_variation_color_controls[i]);
     }
 } )( jQuery );
