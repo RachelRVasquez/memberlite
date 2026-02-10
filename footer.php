@@ -8,8 +8,8 @@
  */
 ?>
 
-<?php if ( ! is_page_template( 'templates/fluid-width.php' )  && ! is_page_template( 'templates/blank.php' ) && ! is_404() ) { ?>
-	</div><!-- .row -->
+<?php if ( ! is_page_template( 'templates/fluid-width.php' ) && ! is_page_template( 'templates/blank.php' ) && ! is_404() ) { ?>
+    </div><!-- .row -->
 <?php } ?>
 
 <?php do_action( 'memberlite_after_content' ); ?>
@@ -18,13 +18,22 @@
 
 <?php do_action( 'memberlite_before_footer' ); ?>
 
-<?php if ( ! is_page_template( 'templates/interstitial.php' ) && ! is_page_template( 'templates/blank.php' ) ) { ?>
-	<footer id="colophon" class="site-footer" role="contentinfo">
+<?php if ( ! is_page_template( 'templates/interstitial.php' ) && ! is_page_template( 'templates/blank.php' ) ) {
+    $footer_variation = get_theme_mod( 'memberlite_footer_variation' );
+    $is_default       = empty( $footer_variation ) || 'default' === $footer_variation;
+    $footer_class     = $is_default ? 'site-footer-default' : 'site-footer-' . $footer_variation;
+    ?>
 
-		<?php get_template_part( 'components/footer/footer', 'default' ); ?>
-		<?php //get_template_part( 'components/footer/footer', 'stacked' ); ?>
+    <footer id="colophon" class="site-footer <?php echo esc_attr( $footer_class ); ?>" role="contentinfo">
+        <?php
+        $footer_variation = get_theme_mod( 'memberlite_footer_variation' );
 
-	</footer><!-- #colophon -->
+        if ( $is_default ) {
+            get_template_part( 'components/footer/footer', 'default' );
+        } else {
+            get_template_part( 'components/footer/footer', $footer_variation );
+        } ?>
+    </footer><!-- #colophon -->
 <?php } // End if(). ?>
 
 <?php do_action( 'memberlite_after_footer' ); ?>
