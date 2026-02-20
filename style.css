@@ -605,7 +605,7 @@ a.comment-reply-link,
 	border: none;
 	border-radius: var(--wp--custom--border--radius);
 	box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
-	color: var(--memberlite-color-white);
+	color: var(--wp--preset--color--base);
 	cursor: pointer;
 	font-family: var(--memberlite-header-font), ui-sans-serif;
 	font-size: var(--wp--preset--font-size--16);
@@ -657,19 +657,16 @@ input[type=submit]:active,
 .btn:hover,
 .btn:focus,
 .btn:active,
-a.comment-reply-link:hover,
 #main div.em-search-main button.em-search-submit:hover {
-	filter: brightness(var(--memberlite-hover-brightness));
 	box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
-	color: var(--memberlite-color-white);
+	background-color: var(--memberlite-color-button);
 }
 
 a.comment-reply-link:focus,
 a.comment-reply-link:hover {
 	border: none;
 	box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
-	color: var(--memberlite-color-white);
-	text-shadow: none;
+	background-color: light-dark( color-mix(in srgb, var(--memberlite-color-button), white 25%), color-mix(in srgb, var(--memberlite-color-button), black 25%) );
 }
 
 .btn_info {
