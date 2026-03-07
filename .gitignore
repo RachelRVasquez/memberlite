@@ -17,15 +17,11 @@ $RECYCLE.BIN/
 
 # npm
 node_modules
-package-lock.json
 
 # composer
 vendor
 composer.js
 composer.lock
-
-# compiled
-build
 
 # Temporary files
 *~
