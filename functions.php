@@ -552,8 +552,8 @@ if ( is_admin() ) {
 /* Implement the Custom Header feature. */
 require_once get_template_directory() . '/inc/custom-header.php';
 
-/* Patterns. */
-require_once get_template_directory() . '/classes/class-memberlite-patterns.php';
+/* Pattern categories. */
+require_once get_template_directory() . '/inc/patterns.php';
 
 /* Customizer additions. */
 require_once get_template_directory() . '/inc/customizer.php';
