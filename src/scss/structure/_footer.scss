@@ -113,32 +113,43 @@
 
 
 // -----------------------------------------------------------------------------
+// Site Footer — Variation Shared Styles
+// -----------------------------------------------------------------------------
+
+// Shared .site-info pattern used across variations.
+// Each variation scopes this under its own .site-footer-{slug} selector.
+@mixin footer-site-info {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--20);
+	justify-content: space-between;
+	margin: 0 auto;
+	padding: var(--wp--preset--spacing--20) 2.35rem;
+
+	> * { margin: 0; }
+
+	@include breakpoint(tablet) {
+		flex-direction: row;
+	}
+
+	@include breakpoint(wide) {
+		max-width: var(--wp--style--global--wide-size);
+		padding-left: 0;
+		padding-right: 0;
+		width: calc(100% - 2.35rem * 2);
+	}
+}
+
+
+// -----------------------------------------------------------------------------
 // Site Footer — Default Variation
 // -----------------------------------------------------------------------------
 
 .site-footer.site-footer-default {
 
 	.site-info {
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-		gap: var(--wp--preset--spacing--20);
-		justify-content: space-between;
-		margin: 0 auto;
-		padding: var(--wp--preset--spacing--20) 2.35rem;
-
-		> * { margin: 0; }
-
-		@include breakpoint(tablet) {
-			flex-direction: row;
-		}
-
-		@include breakpoint(wide) {
-			max-width: var(--wp--style--global--wide-size);
-			padding-left: 0;
-			padding-right: 0;
-			width: calc(100% - 2.35rem * 2);
-		}
+		@include footer-site-info;
 
 		// Back to Top
 		.skip-link {
@@ -155,5 +166,51 @@
 				outline-offset: 2px;
 			}
 		}
+	}
+}
+
+
+// -----------------------------------------------------------------------------
+// Site Footer — Brand Variation
+// -----------------------------------------------------------------------------
+
+.site-footer.site-footer-brand {
+
+	.footer-widgets {
+		padding: var(--wp--preset--spacing--60) 0;
+	}
+
+	// Left brand zone: site name + description
+	.footer-brand-zone {
+		padding-bottom: var(--wp--preset--spacing--40);
+
+		@include breakpoint(tablet) {
+			padding-bottom: 0;
+			padding-right: var(--wp--preset--spacing--50);
+		}
+
+		strong {
+			display: block;
+			font-family: var(--memberlite-header-font), ui-sans-serif;
+			font-size: var(--wp--preset--font-size--24);
+			font-weight: 700;
+			line-height: 1.2;
+			margin-bottom: var(--wp--preset--spacing--10);
+		}
+
+		p {
+			margin: 0;
+			opacity: 0.75;
+		}
+	}
+
+	// Nav column lists: vertical stacked links
+	.footer-widgets ul li a {
+		display: block;
+		padding: calc(var(--wp--preset--spacing--10) / 3) 0;
+	}
+
+	.site-info {
+		@include footer-site-info;
 	}
 }
