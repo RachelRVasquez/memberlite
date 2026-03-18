@@ -380,12 +380,18 @@ class Memberlite_Customize {
 			),
 		) );
 
-		// FOOTER: Footer Widgets ===============
-		self::add_memberlite_setting_control( $wp_customize, 'memberlite_footerwidgets', __( 'Footer Widget Columns', 'memberlite' ), 'memberlite_footer_options', array(
-			'type'              => 'select',
-			'sanitize_callback' => 'absint',
-			'choices'           => array( '2' => '2', '3' => '3', '4' => '4', '6' => '6' ),
+		self::add_memberlite_setting_control( $wp_customize, 'memberlite_hide_zones', __( 'Hide Empty Footer Zones', 'memberlite' ), 'memberlite_footer_options', array(
+			'type'              => 'checkbox',
+			'default'           => false,
+			'sanitize_callback' => array( 'Memberlite_Customize', 'sanitize_checkbox' ),
 		) );
+
+		// FOOTER: Footer Widgets ===============
+//		self::add_memberlite_setting_control( $wp_customize, 'memberlite_footerwidgets', __( 'Footer Widget Columns', 'memberlite' ), 'memberlite_footer_options', array(
+//			'type'              => 'select',
+//			'sanitize_callback' => 'absint',
+//			'choices'           => array( '2' => '2', '3' => '3', '4' => '4', '6' => '6' ),
+//		) );
 
 		// FOOTER: Copyright Text ===============
 		self::add_memberlite_setting_control( $wp_customize, 'copyright_textbox', __( 'Copyright Text', 'memberlite' ), 'memberlite_footer_options', array(
@@ -395,14 +401,14 @@ class Memberlite_Customize {
 		) );
 
 		// FOOTER: Back to Top Heading ==========
-		self::add_memberlite_heading( $wp_customize, 'memberlite_back_to_top_heading', __( 'Back to Top', 'memberlite' ), 'memberlite_footer_options' );
+//		self::add_memberlite_heading( $wp_customize, 'memberlite_back_to_top_heading', __( 'Back to Top', 'memberlite' ), 'memberlite_footer_options' );
 
 		// FOOTER: Back to Top Link =============
-		self::add_memberlite_setting_control( $wp_customize, 'memberlite_back_to_top', __( 'Show Back to Top Link', 'memberlite' ), 'memberlite_footer_options', array(
-			'type'              => 'checkbox',
-			'default'           => true,
-			'sanitize_callback' => array( 'Memberlite_Customize', 'sanitize_checkbox' ),
-		) );
+//		self::add_memberlite_setting_control( $wp_customize, 'memberlite_back_to_top', __( 'Show Back to Top Link', 'memberlite' ), 'memberlite_footer_options', array(
+//			'type'              => 'checkbox',
+//			'default'           => true,
+//			'sanitize_callback' => array( 'Memberlite_Customize', 'sanitize_checkbox' ),
+//		) );
 	}
 
 	/**
