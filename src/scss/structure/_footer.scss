@@ -150,6 +150,22 @@
 
 	.site-info {
 		@include footer-site-info;
+
+		// Back to Top
+		.skip-link {
+			margin-top: var(--wp--preset--spacing--10);
+			text-decoration: none;
+			color: var(--wp--preset--color--base);
+
+			@include breakpoint(tablet) {
+				margin: 0;
+			}
+
+			&:focus {
+				outline-color: var(--memberlite-color-text);
+				outline-offset: 2px;
+			}
+		}
 	}
 }
 
@@ -228,30 +244,5 @@
 		.fine-print {
 			max-width: 65%;
 		}
-	}
-}
-
-
-// -----------------------------------------------------------------------------
-// Floating Back to Top
-// -----------------------------------------------------------------------------
-
-.memberlite-back-to-top {
-	--memberlite-btt-bottom: 1.5rem;
-
-	bottom: var(--memberlite-btt-bottom);
-	opacity: 0;
-	pointer-events: none;
-	position: fixed;
-	right: 1.5rem;
-	transform: translateY(0.5rem);
-	transition: opacity 0.2s ease, transform 0.2s ease;
-	z-index: 999;
-
-	// Shown only when scrolled past threshold and footer is not in view.
-	&.is-visible:not(.is-footer-visible) {
-		opacity: 1;
-		pointer-events: auto;
-		transform: translateY(0);
 	}
 }
