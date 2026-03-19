@@ -175,34 +175,9 @@
 // -----------------------------------------------------------------------------
 
 .site-footer.site-footer-brand {
-	font-size: var(--wp--preset--font-size--14);
 
 	.footer-widgets {
 		padding: var(--wp--preset--spacing--60) 0;
-		border: none;
-
-		.empty-zone {
-			border: 2px dashed;
-			background: rgba(255, 255, 255, .2);
-		}
-
-		h3 {
-			font-size: var(--wp--preset--font-size--14);
-		}
-
-		ul,
-		ol {
-			margin-bottom: var(--wp--preset--spacing--10);
-
-			li {
-				margin: 0;
-			}
-
-			a {
-				display: block;
-				padding: 0;
-			}
-		}
 	}
 
 	// Left brand zone: site name + description
@@ -217,7 +192,7 @@
 		strong {
 			display: block;
 			font-family: var(--memberlite-header-font), ui-sans-serif;
-			font-size: var(--wp--preset--font-size--18);
+			font-size: var(--wp--preset--font-size--24);
 			font-weight: 700;
 			line-height: 1.2;
 			margin-bottom: var(--wp--preset--spacing--10);
@@ -227,22 +202,15 @@
 			margin: 0;
 			opacity: 0.75;
 		}
+	}
 
-		.footer-brand-logo {
-			max-width: 150px;
-			width: 100%;
-			margin-bottom: var(--wp--preset--spacing--20);
-		}
+	// Nav column lists: vertical stacked links
+	.footer-widgets ul li a {
+		display: block;
+		padding: calc(var(--wp--preset--spacing--10) / 3) 0;
 	}
 
 	.site-info {
 		@include footer-site-info;
-		justify-content: space-between;
-		background-color: var(--memberlite-color-footer-widgets-background);
-		color: var(--memberlite-color-footer-widgets);
-
-		.fine-print {
-			max-width: 65%;
-		}
 	}
 }
