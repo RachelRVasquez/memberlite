@@ -43,7 +43,7 @@ function memberlite_get_current_footer_post_name() {
  * theme_mod) and renders its block content. Falls back to the registered
  * default theme pattern if no post is found or no post_name is given.
  *
- * @since 7.0
+ * @since TBD
  *
  * @param string $post_name The post_name of the memberlite_footer post to render.
  */
