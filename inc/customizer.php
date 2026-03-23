@@ -395,12 +395,73 @@ class Memberlite_Customize {
 	 * @return void
 	 */
 	public static function set_customizer_footer_settings( WP_Customize_Manager $wp_customize ) {
-		// FOOTER: Copyright Text ===============
-		self::add_memberlite_setting_control( $wp_customize, 'copyright_textbox', __( 'Copyright Text', 'memberlite' ), 'memberlite_footer_options', array(
-			'transport'         => 'postMessage',
-			'sanitize_callback' => array( 'Memberlite_Customize', 'sanitize_text_with_links' ),
-			'sanitize_js_callback' => array( 'Memberlite_Customize', 'sanitize_js_text_with_links' ),
+		// FOOTER: Footer CPT ===================
+		$footer_choices = self::get_footer_variations();
+
+		// FOOTER: Variations, Global ===============
+		self::add_memberlite_setting_control( $wp_customize, 'memberlite_default_footer_slug', __( 'Default Footer', 'memberlite' ), 'memberlite_footer_options', array(
+			'type'              => 'select',
+			'sanitize_callback' => 'absint',
+			'choices'           => $footer_choices,
+			'default'           => 0,
+			'description'       => __( 'Choose which footer to display all across the site.', 'memberlite' ),
 		) );
+
+		// FOOTER: Variations, Blog & Archives ===============
+		self::add_memberlite_setting_control( $wp_customize, 'memberlite_archives_footer_slug', __( 'Blog & Archives Footer', 'memberlite' ), 'memberlite_footer_options', array(
+			'type'              => 'select',
+			'sanitize_callback' => 'absint',
+			'choices'           => $footer_choices,
+			'default'           => 0,
+			'description'       => __( 'Choose which footer to display on your blog and post archives.', 'memberlite' ),
+		) );
+
+		// FOOTER: Variations, Single Post ===============
+		self::add_memberlite_setting_control( $wp_customize, 'memberlite_post_footer_slug', __( 'Single Post Footer', 'memberlite' ), 'memberlite_footer_options', array(
+			'type'              => 'select',
+			'sanitize_callback' => 'absint',
+			'choices'           => $footer_choices,
+			'default'           => 0,
+			'description'       => __( 'Choose which footer to display on the single post view.', 'memberlite' ),
+		) );
+
+		// FOOTER: Variations, Pages ===============
+		self::add_memberlite_setting_control( $wp_customize, 'memberlite_page_footer_slug', __( 'Pages Footer', 'memberlite' ), 'memberlite_footer_options', array(
+			'type'              => 'select',
+			'sanitize_callback' => 'absint',
+			'choices'           => $footer_choices,
+			'default'           => 0,
+			'description'       => __( 'Choose which footer to display on your pages.', 'memberlite' ),
+		) );
+	}
+
+	/**
+	 * Get memberlite_footer posts for our variation options
+	 *
+	 * @since TBD
+	 *
+	 * @return array
+	 */
+	public static function get_footer_variations(): array {
+		$footer_posts = get_posts( array(
+			'post_type'      => 'memberlite_footer',
+			'post_status'    => 'publish',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+		) );
+
+		$footer_choices = array(
+			'0' => __( '— Use default footer —', 'memberlite' ),
+		);
+
+		if ( ! empty( $footer_posts ) ) {
+			foreach ( $footer_posts as $footer_post ) {
+				$footer_choices[ $footer_post->post_name ] = $footer_post->post_title;
+			}
+		}
+
+		return $footer_choices;
 	}
 
 	/**
