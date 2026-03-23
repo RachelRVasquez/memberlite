@@ -5,6 +5,7 @@
  * Description: Default footer with four widget columns, navigation, and site info.
  * Categories: memberlite-footer, footer
  * Keywords: footer, variation
+ * Post Types: memberlite_footer
  * @package WordPress
  * @subpackage Memberlite
  * @since TBD

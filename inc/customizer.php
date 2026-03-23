@@ -401,36 +401,36 @@ class Memberlite_Customize {
 		// FOOTER: Variations, Global ===============
 		self::add_memberlite_setting_control( $wp_customize, 'memberlite_default_footer_slug', __( 'Default Footer', 'memberlite' ), 'memberlite_footer_options', array(
 			'type'              => 'select',
-			'sanitize_callback' => 'absint',
+			'sanitize_callback' => 'sanitize_key',
 			'choices'           => $footer_choices,
-			'default'           => 0,
+			'default'           => '0',
 			'description'       => __( 'Choose which footer to display all across the site.', 'memberlite' ),
 		) );
 
 		// FOOTER: Variations, Blog & Archives ===============
 		self::add_memberlite_setting_control( $wp_customize, 'memberlite_archives_footer_slug', __( 'Blog & Archives Footer', 'memberlite' ), 'memberlite_footer_options', array(
 			'type'              => 'select',
-			'sanitize_callback' => 'absint',
+			'sanitize_callback' => 'sanitize_key',
 			'choices'           => $footer_choices,
-			'default'           => 0,
+			'default'           => '0',
 			'description'       => __( 'Choose which footer to display on your blog and post archives.', 'memberlite' ),
 		) );
 
 		// FOOTER: Variations, Single Post ===============
 		self::add_memberlite_setting_control( $wp_customize, 'memberlite_post_footer_slug', __( 'Single Post Footer', 'memberlite' ), 'memberlite_footer_options', array(
 			'type'              => 'select',
-			'sanitize_callback' => 'absint',
+			'sanitize_callback' => 'sanitize_key',
 			'choices'           => $footer_choices,
-			'default'           => 0,
+			'default'           => '0',
 			'description'       => __( 'Choose which footer to display on the single post view.', 'memberlite' ),
 		) );
 
 		// FOOTER: Variations, Pages ===============
 		self::add_memberlite_setting_control( $wp_customize, 'memberlite_page_footer_slug', __( 'Pages Footer', 'memberlite' ), 'memberlite_footer_options', array(
 			'type'              => 'select',
-			'sanitize_callback' => 'absint',
+			'sanitize_callback' => 'sanitize_key',
 			'choices'           => $footer_choices,
-			'default'           => 0,
+			'default'           => '0',
 			'description'       => __( 'Choose which footer to display on your pages.', 'memberlite' ),
 		) );
 	}

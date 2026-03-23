@@ -16,11 +16,14 @@
 
 <?php
 if ( ! memberlite_hide_page_footer() ) {
-	$footer_variation = sanitize_key( memberlite_get_variation( 'footer' ) );
-	$footer_class = 'site-footer site-footer-' . $footer_variation;
+	$footer_post_name = memberlite_get_current_footer_post_name();
+	$footer_class     = 'site-footer';
+	if ( $footer_post_name && '0' !== $footer_post_name ) {
+		$footer_class .= ' site-footer-' . sanitize_html_class( $footer_post_name );
+	}
 	?>
 	<footer id="colophon" class="<?php echo esc_attr( $footer_class ); ?>" role="contentinfo">
-		<?php get_template_part( 'components/footer/variation', $footer_variation ); ?>
+		<?php memberlite_render_footer_variation( $footer_post_name ); ?>
 	</footer><!-- #colophon -->
 	<?php
 }

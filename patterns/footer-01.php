@@ -5,6 +5,7 @@
  * Description: Footer with two rows, 4 columns on top of 2.
  * Categories: memberlite-footer, footer
  * Keywords: footer, variation
+ * Post Types: memberlite_footer
  * @package WordPress
  * @subpackage Memberlite
  * @since TBD

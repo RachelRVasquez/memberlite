@@ -121,28 +121,26 @@
 // Site Footer — Default Variation
 // -----------------------------------------------------------------------------
 
-.site-footer.site-footer-default {
+.footer-variation-default {
+	.wp-block-column > .wp-block-group.is-layout-flex {
+			width: 100%;
+			display: block;
 
-	.site-info {
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-		gap: var(--wp--preset--spacing--20);
-		justify-content: space-between;
-		margin: 0 auto;
-		padding: var(--wp--preset--spacing--20) 2.35rem;
-
-		> * { margin: 0; }
-
-		@include breakpoint(tablet) {
-			flex-direction: row;
+		@include breakpoint(desktop) {
+			width: auto;
+			display: flex;
 		}
 
-		@include breakpoint(wide) {
-			max-width: var(--wp--style--global--wide-size);
-			padding-left: 0;
-			padding-right: 0;
-			width: calc(100% - 2.35rem * 2);
+		> .wp-block-group.is-vertical {
+				padding-bottom: var(--wp--preset--spacing--40);
+
+				&:last-child {
+					padding-bottom: 0;
+				}
+
+			@include breakpoint(desktop) {
+				padding-bottom: 0;
+			}
 		}
 	}
 }
