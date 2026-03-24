@@ -8,12 +8,12 @@
  */
 
 /**
- * Get the post_name of the memberlite_footer post to render for the current context.
+ * Get the post_name of the memberlite_footer post to render for the current location.
  *
- * Checks context-specific theme_mods first (single post, page, archives),
+ * Checks location-specific theme_mods first (single post, page, archives),
  * then falls back to the global default footer setting.
  *
- * @since 7.0
+ * @since TBD
  *
  * @return string post_name of the memberlite_footer post, or '0' if none is set.
  */
@@ -59,4 +59,33 @@ function memberlite_render_footer_variation( $post_name ) {
 
 	// Fall back to the registered default theme pattern.
 	echo do_blocks( '<!-- wp:pattern {"slug":"memberlite/footer-default"} /-->' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+}
+
+/**
+ * Get memberlite_footer posts for our variation options
+ *
+ * @since TBD
+ *
+ * @return array
+ */
+function get_footer_variations(): array {
+	$footer_posts = get_posts( array(
+		'post_type'      => 'memberlite_footer',
+		'post_status'    => 'publish',
+		'posts_per_page' => -1,
+		'orderby'        => 'title',
+		'order'          => 'ASC',
+	) );
+
+	$footer_choices = array(
+		'0' => __( '— Use default footer —', 'memberlite' ),
+	);
+
+	if ( ! empty( $footer_posts ) ) {
+		foreach ( $footer_posts as $footer_post ) {
+			$footer_choices[ $footer_post->post_name ] = $footer_post->post_title;
+		}
+	}
+
+	return $footer_choices;
 }

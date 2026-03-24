@@ -396,7 +396,7 @@ class Memberlite_Customize {
 	 */
 	public static function set_customizer_footer_settings( WP_Customize_Manager $wp_customize ) {
 		// FOOTER: Footer CPT ===================
-		$footer_choices = self::get_footer_variations();
+		$footer_choices = get_footer_variations();
 
 		// FOOTER: Variations, Global ===============
 		self::add_memberlite_setting_control( $wp_customize, 'memberlite_default_footer_slug', __( 'Default Footer', 'memberlite' ), 'memberlite_footer_options', array(
@@ -433,35 +433,6 @@ class Memberlite_Customize {
 			'default'           => '0',
 			'description'       => __( 'Choose which footer to display on your pages.', 'memberlite' ),
 		) );
-	}
-
-	/**
-	 * Get memberlite_footer posts for our variation options
-	 *
-	 * @since TBD
-	 *
-	 * @return array
-	 */
-	public static function get_footer_variations(): array {
-		$footer_posts = get_posts( array(
-			'post_type'      => 'memberlite_footer',
-			'post_status'    => 'publish',
-			'posts_per_page' => -1,
-			'orderby'        => 'title',
-			'order'          => 'ASC',
-		) );
-
-		$footer_choices = array(
-			'0' => __( '— Use default footer —', 'memberlite' ),
-		);
-
-		if ( ! empty( $footer_posts ) ) {
-			foreach ( $footer_posts as $footer_post ) {
-				$footer_choices[ $footer_post->post_name ] = $footer_post->post_title;
-			}
-		}
-
-		return $footer_choices;
 	}
 
 	/**
