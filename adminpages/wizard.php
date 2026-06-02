@@ -34,7 +34,7 @@ function memberlite_wizard_enqueue_scripts( $hook ) {
 	wp_enqueue_script(
 		'memberlite-wizard',
 		get_template_directory_uri() . '/src/js/wizard.js',
-		array( 'wp-element' ),
+		array( 'wp-element', 'customize-controls' ),
 		MEMBERLITE_VERSION,
 		true
 	);
