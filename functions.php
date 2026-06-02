@@ -618,6 +618,9 @@ require_once get_template_directory() . '/adminpages/tools.php';
 /* Manage Menus */
 require_once get_template_directory() . '/adminpages/menus.php';
 
+/* Setup Wizard */
+require_once get_template_directory() . '/adminpages/wizard.php';
+
 /* Integration for Paid Memberships Pro. */
 if ( defined( 'PMPRO_VERSION' ) ) {
 	require_once get_template_directory() . '/inc/integrations/paid-memberships-pro.php';

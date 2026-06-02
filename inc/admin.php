@@ -9,6 +9,8 @@
  * Adds the Memberlite admin pages.
  */
 function memberlite_add_pages() {
+	global $memberlite_wizard_page_hook;
+
 	$svg_path = MEMBERLITE_DIR . '/assets/images/pmpro-icon.svg';
 	$icon_url = file_exists( $svg_path )
 		? 'data:image/svg+xml;base64,' . base64_encode( file_get_contents( $svg_path ) )
@@ -29,6 +31,9 @@ function memberlite_add_pages() {
 	add_submenu_page( 'memberlite-dashboard', __( 'Custom Sidebars', 'memberlite' ), __( 'Custom Sidebars', 'memberlite' ), 'edit_theme_options', 'memberlite-custom-sidebars', 'memberlite_custom_sidebars' );
 
 	add_submenu_page( 'memberlite-dashboard', __( 'Tools', 'memberlite' ), __( 'Tools', 'memberlite' ), 'edit_theme_options', 'memberlite-tools', 'memberlite_tools' );
+
+	// Setup Wizard (spike — permanent menu item for testing).
+	$memberlite_wizard_page_hook = add_submenu_page( 'memberlite-dashboard', __( 'Setup Wizard', 'memberlite' ), __( 'Setup Wizard', 'memberlite' ), 'edit_theme_options', 'memberlite-wizard', 'memberlite_wizard_render' );
 }
 add_action( 'admin_menu', 'memberlite_add_pages' );
 
