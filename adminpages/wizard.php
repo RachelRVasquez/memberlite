@@ -38,5 +38,15 @@ function memberlite_wizard_enqueue_scripts( $hook ) {
 		MEMBERLITE_VERSION,
 		true
 	);
+
+	wp_localize_script(
+		'memberlite-wizard',
+		'memberliteWizard',
+		array(
+			'previewUrl'       => home_url( '/' ),
+			'stylesheet'       => get_stylesheet(),
+			'messengerChannel' => 'preview-' . substr( md5( uniqid( '', true ) ), 0, 8 ),
+		)
+	);
 }
 add_action( 'admin_enqueue_scripts', 'memberlite_wizard_enqueue_scripts' );
