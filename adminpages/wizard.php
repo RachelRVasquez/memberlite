@@ -39,13 +39,17 @@ function memberlite_wizard_enqueue_scripts( $hook ) {
 		true
 	);
 
+	$stylesheet = get_stylesheet();
+
 	wp_localize_script(
 		'memberlite-wizard',
 		'memberliteWizard',
 		array(
 			'previewUrl'       => home_url( '/' ),
-			'stylesheet'       => get_stylesheet(),
+			'stylesheet'       => $stylesheet,
 			'messengerChannel' => 'preview-' . substr( md5( uniqid( '', true ) ), 0, 8 ),
+			'changesetUuid'    => wp_generate_uuid4(),
+			'nonce'            => wp_create_nonce( 'preview-customize_' . $stylesheet ),
 		)
 	);
 }
