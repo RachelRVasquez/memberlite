@@ -30,3 +30,26 @@ function memberlite_register_block_styles(): void {
 	);
 }
 add_action( 'init', 'memberlite_register_block_styles' );
+
+function memberlite_register_pmpro_block_styles(): void {
+	if ( defined( 'PMPRO_VERSION' ) ) {
+		register_block_style(
+			'core/group',
+			array(
+				'name'         => 'pmpro-card-variation-1',
+				'label'        => __( 'Base Card', 'memberlite' ),
+				'style_handle' => 'pmpro_frontend_variation_1',
+			)
+		);
+
+		register_block_style(
+			'core/group',
+			array(
+				'name'         => 'pmpro-card-high-contrast',
+				'label'        => __( 'High Contrast Card', 'memberlite' ),
+				'style_handle' => 'pmpro_frontend_variation_high_contrast'
+			)
+		);
+	}
+}
+add_action( 'wp_loaded', 'memberlite_register_pmpro_block_styles' );
