@@ -38,7 +38,6 @@ function memberlite_register_pmpro_block_styles(): void {
 			array(
 				'name'         => 'pmpro-card-variation-1',
 				'label'        => __( 'Base Card', 'memberlite' ),
-				'style_handle' => 'pmpro_frontend_variation_1',
 			)
 		);
 
@@ -47,7 +46,6 @@ function memberlite_register_pmpro_block_styles(): void {
 			array(
 				'name'         => 'pmpro-card-high-contrast',
 				'label'        => __( 'High Contrast Card', 'memberlite' ),
-				'style_handle' => 'pmpro_frontend_variation_high_contrast'
 			)
 		);
 	}
