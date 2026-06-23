@@ -33,21 +33,26 @@ add_action( 'init', 'memberlite_register_block_styles' );
 
 function memberlite_register_pmpro_block_styles(): void {
 	if ( defined( 'PMPRO_VERSION' ) ) {
-		register_block_style(
-			'core/group',
-			array(
-				'name'         => 'pmpro-card-variation-1',
-				'label'        => __( 'Base Card', 'memberlite' ),
-			)
+		$block_styles = array(
+			'core/group' => array(
+				array(
+					'name'                => 'pmpro-card-variation-1',
+					'label'               => __( 'Base Card', 'memberlite' ),
+					'style_handle'        => 'pmpro-block-styles',
+					'editor_style_handle' => 'pmpro-block-styles',
+				),
+				array(
+					'name'  => 'pmpro-card-high-contrast',
+					'label' => __( 'High Contrast Card', 'memberlite' ),
+				)
+			),
 		);
 
-		register_block_style(
-			'core/group',
-			array(
-				'name'         => 'pmpro-card-high-contrast',
-				'label'        => __( 'High Contrast Card', 'memberlite' ),
-			)
-		);
+		foreach ( $block_styles as $block_name => $styles ) {
+			foreach ( $styles as $style ) {
+				register_block_style( $block_name, $style );
+			}
+		}
 	}
 }
 add_action( 'wp_loaded', 'memberlite_register_pmpro_block_styles' );
