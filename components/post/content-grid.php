@@ -15,9 +15,10 @@ global $memberlite_defaults; ?>
 		<?php
 			// Use the dedicated banner image if available, otherwise fall back to the featured image.
 			$grid_image = memberlite_get_banner_image( get_the_ID(), 'large', false, array( 'class' => 'aligncenter' ) );
-			if ( empty( $grid_image ) ) {
-				$grid_image = get_the_post_thumbnail( get_the_ID(), 'large', array( 'class' => 'aligncenter' ) );
-			}
+// Don't need this part?
+			//			if ( empty( $grid_image ) ) {
+//				$grid_image = get_the_post_thumbnail( get_the_ID(), 'large', array( 'class' => 'aligncenter' ) );
+//			}
 			if ( ! empty( $grid_image ) ) {
 				echo $grid_image; // WPCS: xss ok.
 			} else { ?>

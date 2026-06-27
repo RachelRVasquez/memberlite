@@ -506,26 +506,35 @@ function memberlite_get_banner_image( $post_id = 0, $size = 'banner', $icon = fa
 		$post_id = ! empty( $post->ID ) ? $post->ID : 0;
 	}
 
-	if ( empty( $post_id ) || ! class_exists( 'MemberliteMultiPostThumbnails' ) ) {
+	if ( empty( $post_id ) /*|| ! class_exists( 'MemberliteMultiPostThumbnails' )*/ ) {
 		return '';
 	}
 
-	$post_type = get_post_type( $post_id );
-	if ( empty( $post_type ) ) {
-		return '';
-	}
+//	$post_type = get_post_type( $post_id );
+//	if ( empty( $post_type ) ) {
+//		return '';
+//	}
 
-	$banner_image_id = MemberliteMultiPostThumbnails::get_post_thumbnail_id(
-		$post_type,
-		'memberlite_banner_image' . $post_type,
-		$post_id
-	);
+	//Why do we need to use this class at all? Why do we pass the post type?
+//	$banner_image_id = MemberliteMultiPostThumbnails::get_post_thumbnail_id(
+//		$post_type,
+//		'memberlite_banner_image' . $post_type,
+//		$post_id
+//	);
+//
+//	if ( empty( $banner_image_id ) ) {
+//		return '';
+//	}
+//
+//	return wp_get_attachment_image( $banner_image_id, $size, $icon, $attr );
 
-	if ( empty( $banner_image_id ) ) {
-		return '';
-	}
+	$attachment_id = get_post_thumbnail_id( $post_id );
 
-	return wp_get_attachment_image( $banner_image_id, $size, $icon, $attr );
+	$memberlite_banner_image = wp_get_attachment_image( $attachment_id, $size, $icon, $attr );
+
+	$memberlite_banner_image = apply_filters( 'memberlite_get_banner_image', $memberlite_banner_image, $attachment_id, $size, $icon, $attr, $post_id );
+
+	return $memberlite_banner_image;
 }
 
 /**
@@ -544,26 +553,32 @@ function memberlite_get_banner_image_src( $post_id = null, $size = 'banner' ) {
 		$post_id = ! empty( $post->ID ) ? $post->ID : 0;
 	}
 
-	if ( empty( $post_id ) || ! class_exists( 'MemberliteMultiPostThumbnails' ) ) {
-		return false;
-	}
+//	if ( empty( $post_id ) || ! class_exists( 'MemberliteMultiPostThumbnails' ) ) {
+//		return false;
+//	}
+//
+//	$post_type = get_post_type( $post_id );
+//	if ( empty( $post_type ) ) {
+//		return false;
+//	}
+//
+//	$banner_image_id = MemberliteMultiPostThumbnails::get_post_thumbnail_id(
+//		$post_type,
+//		'memberlite_banner_image' . $post_type,
+//		$post_id
+//	);
+//
+//	if ( empty( $banner_image_id ) ) {
+//		return false;
+//	}
 
-	$post_type = get_post_type( $post_id );
-	if ( empty( $post_type ) ) {
-		return false;
-	}
+//	return wp_get_attachment_image_src( $banner_image_id, $size );
 
-	$banner_image_id = MemberliteMultiPostThumbnails::get_post_thumbnail_id(
-		$post_type,
-		'memberlite_banner_image' . $post_type,
-		$post_id
-	);
+	$memberlite_banner_image_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), $size );
 
-	if ( empty( $banner_image_id ) ) {
-		return false;
-	}
+	$memberlite_banner_image_src = apply_filters( 'memberlite_banner_image_src', $memberlite_banner_image_src, $size, $post_id );
 
-	return wp_get_attachment_image_src( $banner_image_id, $size );
+	return $memberlite_banner_image_src;
 }
 
 /**
