@@ -12,8 +12,8 @@
 ?>
 <!-- wp:group {"align":"full","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"right":"var:preset|spacing|20","left":"var:preset|spacing|20","top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--20)"><!-- wp:heading {"style":{"typography":{"textAlign":"center","textTransform":"capitalize"}},"fontSize":"42","fontFamily":"gentium-book-basic"} -->
-<h2 class="wp-block-heading has-text-align-center has-gentium-book-basic-font-family has-42-font-size" style="text-transform:capitalize">Members who have already joined are making tremendous progress...</h2>
+<div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--20)"><!-- wp:heading {"style":{"typography":{"textAlign":"center","textTransform":"capitalize"}},"fontSize":"42"} -->
+<h2 class="wp-block-heading has-text-align-center has-42-font-size" style="text-transform:capitalize">Members who have already joined are making tremendous progress...</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"textAlign":"center","textTransform":"uppercase","letterSpacing":"1px"},"elements":{"link":{"color":{"text":"var:preset|color|color-action"}}},"spacing":{"margin":{"top":"var:preset|spacing|10"}}},"textColor":"color-action","fontSize":"16"} -->
@@ -24,12 +24,12 @@
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:columns {"style":{"spacing":{"padding":{"right":"0","left":"0"},"margin":{"top":"var:preset|spacing|30"}}}} -->
 <div class="wp-block-columns" style="margin-top:var(--wp--preset--spacing--30);padding-right:0;padding-left:0"><!-- wp:column {"style":{"border":{"radius":{"topLeft":"8px","topRight":"8px","bottomLeft":"8px","bottomRight":"8px"}},"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|10","right":"var:preset|spacing|10"}}},"borderColor":"color-primary"} -->
-<div class="wp-block-column has-border-color has-color-primary-border-color" style="border-top-left-radius:8px;border-top-right-radius:8px;border-bottom-left-radius:8px;border-bottom-right-radius:8px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--10)"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center"}},"fontSize":"30","fontFamily":"gentium-book-basic"} -->
-<p class="has-text-align-center has-gentium-book-basic-font-family has-30-font-size"><strong>The Basics</strong></p>
+<div class="wp-block-column has-border-color has-color-primary-border-color" style="border-top-left-radius:8px;border-top-right-radius:8px;border-bottom-left-radius:8px;border-bottom-right-radius:8px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--10)"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center"}},"fontSize":"30"} -->
+<p class="has-text-align-center has-30-font-size"><strong>The Basics</strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"},"spacing":{"margin":{"top":"0"}}},"fontSize":"42","fontFamily":"gentium-book-basic"} -->
-<p class="has-text-align-center has-gentium-book-basic-font-family has-42-font-size" style="margin-top:0;font-style:normal;font-weight:700"><strong>$50</strong></p>
+<!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"},"spacing":{"margin":{"top":"0"}}},"fontSize":"42"} -->
+<p class="has-text-align-center has-42-font-size" style="margin-top:0;font-style:normal;font-weight:700"><strong>$50</strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0"},"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30"}}},"layout":{"type":"constrained","justifyContent":"center"}} -->
@@ -72,12 +72,12 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"style":{"border":{"radius":{"topLeft":"8px","topRight":"8px","bottomLeft":"8px","bottomRight":"8px"}},"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|10","right":"var:preset|spacing|10"}}},"backgroundColor":"color-primary","borderColor":"color-primary"} -->
-<div class="wp-block-column has-border-color has-color-primary-border-color has-color-primary-background-color has-background" style="border-top-left-radius:8px;border-top-right-radius:8px;border-bottom-left-radius:8px;border-bottom-right-radius:8px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--10)"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center"},"elements":{"link":{"color":{"text":"var:preset|color|site-navigation-background"}}}},"textColor":"site-navigation-background","fontSize":"30","fontFamily":"gentium-book-basic"} -->
-<p class="has-text-align-center has-site-navigation-background-color has-text-color has-link-color has-gentium-book-basic-font-family has-30-font-size"><strong>Expert Fisherman</strong></p>
+<div class="wp-block-column has-border-color has-color-primary-border-color has-color-primary-background-color has-background" style="border-top-left-radius:8px;border-top-right-radius:8px;border-bottom-left-radius:8px;border-bottom-right-radius:8px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--10)"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center"},"elements":{"link":{"color":{"text":"var:preset|color|site-navigation-background"}}}},"textColor":"site-navigation-background","fontSize":"30"} -->
+<p class="has-text-align-center has-site-navigation-background-color has-text-color has-link-color has-30-font-size"><strong>Expert Fisherman</strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"},"spacing":{"margin":{"top":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|site-navigation-background"}}}},"textColor":"site-navigation-background","fontSize":"42","fontFamily":"gentium-book-basic"} -->
-<p class="has-text-align-center has-site-navigation-background-color has-text-color has-link-color has-gentium-book-basic-font-family has-42-font-size" style="margin-top:0;font-style:normal;font-weight:700"><strong>$100</strong></p>
+<!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"},"spacing":{"margin":{"top":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|site-navigation-background"}}}},"textColor":"site-navigation-background","fontSize":"42"} -->
+<p class="has-text-align-center has-site-navigation-background-color has-text-color has-link-color has-42-font-size" style="margin-top:0;font-style:normal;font-weight:700"><strong>$100</strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0"},"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30"}}},"layout":{"type":"constrained","justifyContent":"center"}} -->

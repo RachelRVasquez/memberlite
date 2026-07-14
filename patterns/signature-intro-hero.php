@@ -13,21 +13,21 @@
 <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"top":"0"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|color-action"}}}},"textColor":"color-action","fontSize":"36","fontFamily":"great-vibes"} -->
-<p class="has-color-action-color has-text-color has-link-color has-great-vibes-font-family has-36-font-size">Sarah Mitchell</p>
+<div class="wp-block-column is-vertically-aligned-center"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|color-action"}}}},"textColor":"color-action","fontSize":"36"} -->
+<p class="has-color-action-color has-text-color has-link-color has-36-font-size">Sarah Mitchell</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"style":{"typography":{"letterSpacing":"2px"},"spacing":{"margin":{"top":"var:preset|spacing|10"}}},"fontSize":"36","fontFamily":"libre-baskerville"} -->
-<h2 class="wp-block-heading has-libre-baskerville-font-family has-36-font-size" style="margin-top:var(--wp--preset--spacing--10);letter-spacing:2px">Grow with guidance you can trust</h2>
+<!-- wp:heading {"style":{"typography":{"letterSpacing":"2px"},"spacing":{"margin":{"top":"var:preset|spacing|10"}}},"fontSize":"36"} -->
+<h2 class="wp-block-heading has-36-font-size" style="margin-top:var(--wp--preset--spacing--10);letter-spacing:2px">Grow with guidance you can trust</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"fontFamily":"karla"} -->
-<p class="has-karla-font-family" style="margin-top:var(--wp--preset--spacing--10);margin-bottom:var(--wp--preset--spacing--10)">I've spent the last decade helping members build better habits, gain clarity, and stay accountable through personalized guidance, exclusive resources, and a community that cheers you on.</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}}} -->
+<p style="margin-top:var(--wp--preset--spacing--10);margin-bottom:var(--wp--preset--spacing--10)">I've spent the last decade helping members build better habits, gain clarity, and stay accountable through personalized guidance, exclusive resources, and a community that cheers you on.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|20"}}}} -->
-<div class="wp-block-buttons" style="margin-bottom:var(--wp--preset--spacing--20)"><!-- wp:button {"className":"is-style-sharp","style":{"typography":{"textTransform":"uppercase","letterSpacing":"1px"}},"fontFamily":"karla"} -->
-<div class="wp-block-button is-style-sharp"><a class="wp-block-button__link has-karla-font-family wp-element-button" style="letter-spacing:1px;text-transform:uppercase">Contact</a></div>
+<div class="wp-block-buttons" style="margin-bottom:var(--wp--preset--spacing--20)"><!-- wp:button {"className":"is-style-sharp","style":{"typography":{"textTransform":"uppercase","letterSpacing":"1px"}}} -->
+<div class="wp-block-button is-style-sharp"><a class="wp-block-button__link wp-element-button" style="letter-spacing:1px;text-transform:uppercase">Contact</a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-arrow-plain","style":{"typography":{"letterSpacing":"1px","textTransform":"uppercase"}}} -->

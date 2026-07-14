@@ -17,8 +17,8 @@
 <p style="margin-top:var(--wp--preset--spacing--20);text-transform:uppercase"><strong>Invest in knowledge</strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":1.4},"spacing":{"margin":{"top":"0"}}},"fontSize":"32","fontFamily":"open-sans"} -->
-<p class="has-open-sans-font-family has-32-font-size" style="margin-top:0;line-height:1.4"><strong>Everything you need in one package</strong></p>
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":1.4},"spacing":{"margin":{"top":"0"}}},"fontSize":"32"} -->
+<p class="has-32-font-size" style="margin-top:0;line-height:1.4"><strong>Everything you need in one package</strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"spacing":{"margin":{"top":"var:preset|spacing|10"}}}} -->
@@ -28,13 +28,13 @@
 
 <!-- wp:column {"style":{"spacing":{"padding":{"top":"0","bottom":"0"}},"border":{"radius":{"topLeft":"8px","topRight":"8px","bottomLeft":"8px","bottomRight":"8px"}}},"backgroundColor":"site-navigation-background"} -->
 <div class="wp-block-column has-site-navigation-background-background-color has-background" style="border-top-left-radius:8px;border-top-right-radius:8px;border-bottom-left-radius:8px;border-bottom-right-radius:8px;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|site-navigation-background"}}},"border":{"radius":{"topLeft":"8px","topRight":"8px"}},"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var:preset|spacing|20","right":"var:preset|spacing|20"}}},"backgroundColor":"site-navigation-link","textColor":"site-navigation-background","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-site-navigation-background-color has-site-navigation-link-background-color has-text-color has-background has-link-color" style="border-top-left-radius:8px;border-top-right-radius:8px;padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)"><!-- wp:heading {"level":3,"fontSize":"32","fontFamily":"open-sans"} -->
-<h3 class="wp-block-heading has-open-sans-font-family has-32-font-size">Video Editing Course</h3>
+<div class="wp-block-group has-site-navigation-background-color has-site-navigation-link-background-color has-text-color has-background has-link-color" style="border-top-left-radius:8px;border-top-right-radius:8px;padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)"><!-- wp:heading {"level":3,"fontSize":"32"} -->
+<h3 class="wp-block-heading has-32-font-size">Video Editing Course</h3>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10","margin":{"top":"var:preset|spacing|10"}}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"}} -->
-<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--10)"><!-- wp:paragraph {"fontSize":"36","fontFamily":"open-sans"} -->
-<p class="has-open-sans-font-family has-36-font-size"><strong>$49.99</strong></p>
+<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--10)"><!-- wp:paragraph {"fontSize":"36"} -->
+<p class="has-36-font-size"><strong>$49.99</strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
