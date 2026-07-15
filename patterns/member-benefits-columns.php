@@ -33,11 +33,9 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"style":{"border":{"width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|20","right":"var:preset|spacing|20"}}},"borderColor":"borders"} -->
-<div class="wp-block-column has-border-color has-borders-border-color" style="border-width:1px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--20)"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"10em","topRight":"10em","bottomLeft":"10em","bottomRight":"10em"}},"dimensions":{"minHeight":"45px"},"css":"display: flex; align-items: center; justify-content: center; width: 45px; height: 45px;"},"backgroundColor":"color-secondary","textColor":"site-navigation-background","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-custom-css has-site-navigation-background-color has-color-secondary-background-color has-text-color has-background" style="border-top-left-radius:10em;border-top-right-radius:10em;border-bottom-left-radius:10em;border-bottom-right-radius:10em;min-height:45px"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"21"} -->
-<p class="has-text-align-center has-21-font-size" style="font-style:normal;font-weight:700">[fa icon="users"]</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
+<div class="wp-block-column has-border-color has-borders-border-color" style="border-width:1px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--20)"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"21"} -->
+<p class="has-text-align-center has-21-font-size" style="font-style:normal;font-weight:700">[fa icon="users" color="site-navigation-background" background="secondary" shape="circle"]</p>
+<!-- /wp:paragraph -->
 
 <!-- wp:heading {"fontSize":"24"} -->
 <h2 class="wp-block-heading has-24-font-size">Community Access</h2>
@@ -49,11 +47,9 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"style":{"border":{"width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|20","right":"var:preset|spacing|20"}}},"borderColor":"borders"} -->
-<div class="wp-block-column has-border-color has-borders-border-color" style="border-width:1px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--20)"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"10em","topRight":"10em","bottomLeft":"10em","bottomRight":"10em"}},"dimensions":{"minHeight":"45px"},"css":"display: flex; align-items: center; justify-content: center; width: 45px; height: 45px;"},"backgroundColor":"color-secondary","textColor":"site-navigation-background","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-custom-css has-site-navigation-background-color has-color-secondary-background-color has-text-color has-background" style="border-top-left-radius:10em;border-top-right-radius:10em;border-bottom-left-radius:10em;border-bottom-right-radius:10em;min-height:45px"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"21"} -->
-<p class="has-text-align-center has-21-font-size" style="font-style:normal;font-weight:700">[fa icon="book-open"]</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
+<div class="wp-block-column has-border-color has-borders-border-color" style="border-width:1px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--20)"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"21"} -->
+<p class="has-text-align-center has-21-font-size" style="font-style:normal;font-weight:700">[fa icon="book-open" color="site-navigation-background" background="secondary" shape="circle"]</p>
+<!-- /wp:paragraph -->
 
 <!-- wp:heading {"fontSize":"24"} -->
 <h2 class="wp-block-heading has-24-font-size">Exclusive Content</h2>
@@ -65,11 +61,9 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"style":{"border":{"width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|20","right":"var:preset|spacing|20"}}},"borderColor":"borders"} -->
-<div class="wp-block-column has-border-color has-borders-border-color" style="border-width:1px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--20)"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"10em","topRight":"10em","bottomLeft":"10em","bottomRight":"10em"}},"dimensions":{"minHeight":"45px"},"css":"display: flex; align-items: center; justify-content: center; width: 45px; height: 45px;"},"backgroundColor":"color-secondary","textColor":"site-navigation-background","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-custom-css has-site-navigation-background-color has-color-secondary-background-color has-text-color has-background" style="border-top-left-radius:10em;border-top-right-radius:10em;border-bottom-left-radius:10em;border-bottom-right-radius:10em;min-height:45px"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"21"} -->
-<p class="has-text-align-center has-21-font-size" style="font-style:normal;font-weight:700">[fa icon="headset"]</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
+<div class="wp-block-column has-border-color has-borders-border-color" style="border-width:1px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--20)"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"21"} -->
+<p class="has-text-align-center has-21-font-size" style="font-style:normal;font-weight:700">[fa icon="headset" color="site-navigation-background" background="secondary" shape="circle"]</p>
+<!-- /wp:paragraph -->
 
 <!-- wp:heading {"fontSize":"24"} -->
 <h2 class="wp-block-heading has-24-font-size">Priority Support</h2>

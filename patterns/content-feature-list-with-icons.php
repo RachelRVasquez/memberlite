@@ -21,11 +21,9 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"},"margin":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--10);margin-bottom:var(--wp--preset--spacing--10);padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|10"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"10%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"100em","topRight":"100em","bottomLeft":"100em","bottomRight":"100em"}},"dimensions":{"minHeight":"50px"},"css":"display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;"},"backgroundColor":"color-action","textColor":"site-navigation-background","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-custom-css has-site-navigation-background-color has-color-action-background-color has-text-color has-background" style="border-top-left-radius:100em;border-top-right-radius:100em;border-bottom-left-radius:100em;border-bottom-right-radius:100em;min-height:50px"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"21"} -->
-<p class="has-text-align-center has-21-font-size" style="font-style:normal;font-weight:700">[fa icon="users"]</p>
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"21"} -->
+<p class="has-text-align-center has-21-font-size" style="font-style:normal;font-weight:700">[fa icon="users" color="site-navigation-background" background="action" shape="circle"]</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"","style":{"spacing":{"padding":{"right":"0","left":"var:preset|spacing|10"}}}} -->
@@ -45,11 +43,9 @@
 <div class="wp-block-column is-vertically-aligned-top"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|10"},"margin":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--10);margin-bottom:var(--wp--preset--spacing--10);padding-top:0;padding-bottom:var(--wp--preset--spacing--10)"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|10"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"10%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"100em","topRight":"100em","bottomLeft":"100em","bottomRight":"100em"}},"dimensions":{"minHeight":"50px"},"css":"display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;"},"backgroundColor":"color-action","textColor":"site-navigation-background","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-custom-css has-site-navigation-background-color has-color-action-background-color has-text-color has-background" style="border-top-left-radius:100em;border-top-right-radius:100em;border-bottom-left-radius:100em;border-bottom-right-radius:100em;min-height:50px"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"21"} -->
-<p class="has-text-align-center has-21-font-size" style="font-style:normal;font-weight:700">[fa icon="key"]</p>
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"21"} -->
+<p class="has-text-align-center has-21-font-size" style="font-style:normal;font-weight:700">[fa icon="key" color="site-navigation-background" background="action" shape="circle"]</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"style":{"spacing":{"padding":{"left":"var:preset|spacing|10"}}}} -->
@@ -67,11 +63,9 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0"},"margin":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--10);margin-bottom:var(--wp--preset--spacing--10);padding-top:0;padding-bottom:0"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|10"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"10%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"100em","topRight":"100em","bottomLeft":"100em","bottomRight":"100em"}},"dimensions":{"minHeight":"50px"},"css":"display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;"},"backgroundColor":"color-action","textColor":"site-navigation-background","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-custom-css has-site-navigation-background-color has-color-action-background-color has-text-color has-background" style="border-top-left-radius:100em;border-top-right-radius:100em;border-bottom-left-radius:100em;border-bottom-right-radius:100em;min-height:50px"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"21"} -->
-<p class="has-text-align-center has-21-font-size" style="font-style:normal;font-weight:700">[fa icon="mobile-screen"]</p>
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"21"} -->
+<p class="has-text-align-center has-21-font-size" style="font-style:normal;font-weight:700">[fa icon="mobile-screen" color="site-navigation-background" background="action" shape="circle"]</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"style":{"spacing":{"padding":{"left":"var:preset|spacing|10"}}}} -->

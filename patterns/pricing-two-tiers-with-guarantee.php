@@ -2,7 +2,7 @@
 /**
  * Title: Two Tier Pricing With Guarantee
  * Slug: memberlite/pricing-two-tiers-with-guarantee
- * Description: Heading and subtitle above a two-column pricing table with a perks checklist, plus a money-back guarantee callout below. Content is static and does not pull from PMPro membership levels, so it should be customized per site. Perk checkmarks and the guarantee icon use the Memberlite Font Awesome shortcode; the guarantee icon circle is fixed to 80px via custom CSS on the group block rather than the WordPress Icon block, for compatibility with sites not yet on WordPress 7.
+ * Description: Heading and subtitle above a two-column pricing table with a perks checklist, plus a money-back guarantee callout below. Content is static and does not pull from PMPro membership levels, so it should be customized per site. Perk checkmarks and the guarantee icon use the Memberlite Font Awesome shortcode rather than the WordPress Icon block, for compatibility with sites not yet on WordPress 7; the guarantee icon's circle badge uses the shortcode's own color/background/shape attributes.
  * Categories: memberlite-pricing
  * Keywords: pricing, plans, membership, guarantee, money back, perks, comparison
  * @package WordPress
@@ -124,11 +124,9 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"},"margin":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--10);margin-bottom:var(--wp--preset--spacing--10);padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"10%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"100%","topRight":"100%","bottomLeft":"100%","bottomRight":"100%"}},"elements":{"link":{"color":{"text":"var:preset|color|site-navigation-background"}}},"dimensions":{"minHeight":"80px"},"css":"display: flex; align-items: center; justify-content: center; height: 80px; width: 80px;"},"backgroundColor":"color-primary","textColor":"site-navigation-background","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-custom-css has-site-navigation-background-color has-color-primary-background-color has-text-color has-background has-link-color" style="border-top-left-radius:100%;border-top-right-radius:100%;border-bottom-left-radius:100%;border-bottom-right-radius:100%;min-height:80px"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textAlign":"center"},"layout":{"selfStretch":"fixed","flexSize":"25%"},"spacing":{"padding":{"right":"5px","left":"5px","top":"5px","bottom":"5px"}},"border":{"radius":{"topLeft":"100%","topRight":"100%","bottomLeft":"100%","bottomRight":"100%"}}},"fontSize":"24"} -->
-<p class="has-text-align-center has-24-font-size" style="border-top-left-radius:100%;border-top-right-radius:100%;border-bottom-left-radius:100%;border-bottom-right-radius:100%;padding-top:5px;padding-right:5px;padding-bottom:5px;padding-left:5px;font-style:normal;font-weight:700">[fa icon="handshake"]</p>
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textAlign":"center"}},"fontSize":"24"} -->
+<p class="has-text-align-center has-24-font-size" style="font-style:normal;font-weight:700">[fa icon="handshake" color="site-navigation-background" background="primary" shape="circle"]</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->

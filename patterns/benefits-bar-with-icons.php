@@ -15,11 +15,9 @@
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|10"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"10%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"10px","topRight":"10px","bottomLeft":"10px","bottomRight":"10px"}},"dimensions":{"minHeight":"35px"},"css":"display: flex; align-items: center; justify-content: center; width: 35px; height: 35px;"},"backgroundColor":"color-secondary","textColor":"site-navigation-background","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-custom-css has-site-navigation-background-color has-color-secondary-background-color has-text-color has-background" style="border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;min-height:35px"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"16"} -->
-<p class="has-text-align-center has-16-font-size" style="font-style:normal;font-weight:700">[fa icon="store"]</p>
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"16"} -->
+<p class="has-text-align-center has-16-font-size" style="font-style:normal;font-weight:700">[fa icon="store" color="site-navigation-background" background="secondary" shape="squircle"]</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
@@ -37,11 +35,9 @@
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|10"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"10%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"10px","topRight":"10px","bottomLeft":"10px","bottomRight":"10px"}},"dimensions":{"minHeight":"35px"},"css":"display: flex; align-items: center; justify-content: center; width: 35px; height: 35px;"},"backgroundColor":"color-secondary","textColor":"site-navigation-background","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-custom-css has-site-navigation-background-color has-color-secondary-background-color has-text-color has-background" style="border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;min-height:35px"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"16"} -->
-<p class="has-text-align-center has-16-font-size" style="font-style:normal;font-weight:700">[fa icon="credit-card"]</p>
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"16"} -->
+<p class="has-text-align-center has-16-font-size" style="font-style:normal;font-weight:700">[fa icon="credit-card" color="site-navigation-background" background="secondary" shape="squircle"]</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
@@ -59,11 +55,9 @@
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|10"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"10%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"10px","topRight":"10px","bottomLeft":"10px","bottomRight":"10px"}},"dimensions":{"minHeight":"35px"},"css":"display: flex; align-items: center; justify-content: center; width: 35px; height: 35px;"},"backgroundColor":"color-secondary","textColor":"site-navigation-background","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-custom-css has-site-navigation-background-color has-color-secondary-background-color has-text-color has-background" style="border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;min-height:35px"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"16"} -->
-<p class="has-text-align-center has-16-font-size" style="font-style:normal;font-weight:700">[fa icon="users"]</p>
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"16"} -->
+<p class="has-text-align-center has-16-font-size" style="font-style:normal;font-weight:700">[fa icon="users" color="site-navigation-background" background="secondary" shape="squircle"]</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
@@ -81,11 +75,9 @@
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|10"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"10%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"10px","topRight":"10px","bottomLeft":"10px","bottomRight":"10px"}},"dimensions":{"minHeight":"35px"},"css":"display: flex; align-items: center; justify-content: center; width: 35px; height: 35px;"},"backgroundColor":"color-secondary","textColor":"site-navigation-background","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-custom-css has-site-navigation-background-color has-color-secondary-background-color has-text-color has-background" style="border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;min-height:35px"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"16"} -->
-<p class="has-text-align-center has-16-font-size" style="font-style:normal;font-weight:700">[fa icon="shield"]</p>
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center","fontStyle":"normal","fontWeight":"700"}},"fontSize":"16"} -->
+<p class="has-text-align-center has-16-font-size" style="font-style:normal;font-weight:700">[fa icon="shield" color="site-navigation-background" background="secondary" shape="squircle"]</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
