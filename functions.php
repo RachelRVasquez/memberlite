@@ -976,3 +976,8 @@ function memberlite_dedupe_editor_color_palette( $editor_settings, $context ) {
 	return $editor_settings;
 }
 add_filter( 'block_editor_settings_all', 'memberlite_dedupe_editor_color_palette', 20, 2 );
+
+add_filter( 'block_editor_settings_all', function( $settings ) {
+	$settings['disableContentOnlyForUnsyncedPatterns'] = true;
+	return $settings;
+} );
