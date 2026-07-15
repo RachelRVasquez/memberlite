@@ -5,6 +5,7 @@
  * Description: Introduce the leader of this program.
  * Categories: memberlite-team, memberlite-about
  * Keywords: about, bio, instructor, coach, teacher, expert, people
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

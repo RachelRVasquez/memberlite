@@ -5,6 +5,7 @@
  * Description: Showcase the team with a compelling message and headshots.
  * Categories: memberlite-team
  * Keywords: about, bio, instructor, coach, teacher, expert, team, people
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

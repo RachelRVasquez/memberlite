@@ -5,6 +5,7 @@
  * Description: Display your latest blog posts in a three-column grid with featured images, titles, dates, and excerpts.
  * Categories: memberlite-content
  * Keywords: blog, posts, news, articles, query loop, grid
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

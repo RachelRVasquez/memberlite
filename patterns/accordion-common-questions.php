@@ -5,6 +5,7 @@
  * Description: FAQ-style accordion inside a section with its own background color, distinct from the accordion heading and open-panel colors. Content is static and should be customized per site.
  * Categories: memberlite-accordion
  * Keywords: faq, accordion, questions, help, support
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

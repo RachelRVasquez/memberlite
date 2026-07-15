@@ -5,6 +5,7 @@
  * Description: Greet website visitors with a compelling message and primary call to action.
  * Categories: memberlite-about, memberlite-hero
  * Keywords: hero, call to action, cta, homepage
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

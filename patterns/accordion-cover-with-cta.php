@@ -5,6 +5,7 @@
  * Description: Full-width cover image section with intro content and a CTA button on the left, and a caret-style accordion on the right. Content is static and should be customized per site.
  * Categories: memberlite-accordion
  * Keywords: faq, accordion, questions, cta, cover, community
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

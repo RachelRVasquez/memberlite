@@ -5,6 +5,7 @@
  * Description: A personal introduction hero with a script-style signature, headline, short bio, portrait, and CTAs. Good for one-person expert or coaching sites.
  * Categories: memberlite-about, memberlite-hero
  * Keywords: hero, about, signature, founder, coach, expert, bio
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

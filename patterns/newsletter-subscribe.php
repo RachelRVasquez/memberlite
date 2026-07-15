@@ -5,6 +5,7 @@
  * Description: A call-to-action section encouraging visitors to subscribe to your paid newsletter.
  * Categories: memberlite-cta
  * Keywords: newsletter, subscribe, email, paid newsletter, call to action
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

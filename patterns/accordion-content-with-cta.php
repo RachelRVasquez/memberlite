@@ -5,6 +5,7 @@
  * Description: Two-column FAQ layout with intro content and a CTA button on the left, and a large-icon accordion on the right. Content is static and should be customized per site.
  * Categories: memberlite-accordion
  * Keywords: faq, accordion, questions, cta, contact
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

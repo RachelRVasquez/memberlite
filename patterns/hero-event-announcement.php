@@ -5,6 +5,7 @@
  * Description: A full-width cover image hero announcing an upcoming event, conference, or gathering, with a register CTA and a sponsor logo bar.
  * Categories: memberlite-hero
  * Keywords: hero, event, conference, gathering, register, sponsors
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

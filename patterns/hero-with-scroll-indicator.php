@@ -5,6 +5,7 @@
  * Description: A full-width cover image hero with a left-aligned headline, CTAs, and a scroll indicator cue to encourage visitors to keep exploring the page.
  * Categories: memberlite-hero
  * Keywords: hero, cover, cta, scroll, scroll indicator, welcome
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

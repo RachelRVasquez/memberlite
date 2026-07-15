@@ -5,6 +5,7 @@
  * Description: Bordered card footer with two stacked link columns and a login form. Light background. Requires Paid Memberships Pro.
  * Categories: memberlite-footer, footer
  * Keywords: footer, login, member, links, card, border
+ * Synced: false
  * Block Types: core/post-content
  * Post Types: memberlite_footer
  * Note: Update links to point to your membership levels and checkout pages.

@@ -5,6 +5,7 @@
  * Description: Colored header bar with centered logo and site branding, social links, and centered navigation.
  * Categories: memberlite-header, header
  * Keywords: header, navigation, member, centered, stacked
+ * Synced: false
  * Block Types: core/post-content
  * Post Types: memberlite_header
  * @package WordPress

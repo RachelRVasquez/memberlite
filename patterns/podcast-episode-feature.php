@@ -5,6 +5,7 @@
  * Description: A featured podcast episode layout with show artwork, episode details, and listen/subscribe buttons.
  * Categories: memberlite-media
  * Keywords: podcast, episode, audio, listen, show
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

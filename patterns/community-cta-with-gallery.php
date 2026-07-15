@@ -5,6 +5,7 @@
  * Description: Full-width banner with a heading, join button, and photo gallery grid. Uses the page masthead background/text pair rather than Primary/Secondary, since only the masthead colors are guaranteed to stay readable together across every color scheme. Content is static and should be customized per site.
  * Categories: memberlite-community
  * Keywords: community, cta, gallery, photos, join
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

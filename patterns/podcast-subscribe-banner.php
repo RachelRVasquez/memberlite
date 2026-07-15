@@ -5,6 +5,7 @@
  * Description: A full-width banner promoting your podcast with show details and subscribe links to popular platforms.
  * Categories: memberlite-media
  * Keywords: podcast, subscribe, banner, audio, show
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

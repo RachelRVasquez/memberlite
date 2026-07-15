@@ -5,6 +5,7 @@
  * Description: Display recent newsletter issues using a query loop with a list layout, lock icon, and subscribe CTA.
  * Categories: memberlite-content
  * Keywords: newsletter, archive, issues, paid newsletter, query loop
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

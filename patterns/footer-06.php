@@ -5,6 +5,7 @@
  * Description: Community stat callouts above a logo and link columns. Great for showcasing your membership community. Light background.
  * Categories: memberlite-footer, footer
  * Keywords: footer, stats, community, numbers, social proof
+ * Synced: false
  * Block Types: core/post-content
  * Post Types: memberlite_footer
  * Note: Update the stat numbers and labels to reflect your actual community metrics.

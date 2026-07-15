@@ -5,6 +5,7 @@
  * Description: A full-width banner showcasing community engagement metrics with icons.
  * Categories: memberlite-community
  * Keywords: community, stats, metrics, social proof, engagement
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

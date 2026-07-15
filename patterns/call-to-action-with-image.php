@@ -5,6 +5,7 @@
  * Description: Encourage a specific call to action
  * Categories: memberlite-cta
  * Keywords: marketing, call to action, cta, content upgrade, promotion, lead magnet
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

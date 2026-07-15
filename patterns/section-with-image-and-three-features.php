@@ -5,6 +5,7 @@
  * Description: Highlight the elements of your program.
  * Categories: memberlite-about
  * Keywords: about, coach, community, course, homepage, membership
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

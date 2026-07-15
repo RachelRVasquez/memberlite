@@ -5,6 +5,7 @@
  * Description: An intro column with a heading, description, and CTA alongside three bordered benefit columns with icon badges. Icon badges use the Memberlite Font Awesome shortcode rather than the WordPress 7.0 Icon block, for compatibility with sites not yet on WordPress 7.0.
  * Categories: memberlite-about, memberlite-features
  * Keywords: benefits, features, icons, columns, membership, services
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

@@ -5,6 +5,7 @@
  * Description: Full footer with logo, site tagline, and three link columns. Dark background.
  * Categories: memberlite-footer, footer
  * Keywords: footer, logo, links, columns, full
+ * Synced: false
  * Block Types: core/post-content
  * Post Types: memberlite_footer
  * @package WordPress

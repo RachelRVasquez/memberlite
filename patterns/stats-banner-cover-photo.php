@@ -5,6 +5,7 @@
  * Description: A full-width photo banner with four large key metrics overlaid on the image.
  * Categories: memberlite-about
  * Keywords: stats, metrics, numbers, cover, photo, social proof
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

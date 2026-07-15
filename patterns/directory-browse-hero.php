@@ -5,6 +5,7 @@
  * Description: A hero section encouraging visitors to explore the member directory, with a collage of member photos.
  * Categories: memberlite-community
  * Keywords: directory, members, browse, hero, search
+ * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0
