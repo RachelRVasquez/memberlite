@@ -518,15 +518,6 @@ hr.wp-block-separator {
 }
 
 .wp-block-button {
-	&.is-style-pill a {
-		border-radius: 10em;
-		padding: calc(var(--wp--preset--spacing--10) / 2) var(--wp--preset--spacing--30);
-	}
-
-	&.is-style-sharp a {
-		border-radius: 0;
-	}
-
 	&.is-style-arrow-fill a,
 	&.is-style-arrow-plain a {
 		display: flex;

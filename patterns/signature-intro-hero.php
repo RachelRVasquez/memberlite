@@ -27,8 +27,8 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|20"}}}} -->
-<div class="wp-block-buttons" style="margin-bottom:var(--wp--preset--spacing--20)"><!-- wp:button {"className":"is-style-sharp","style":{"typography":{"textTransform":"uppercase","letterSpacing":"1px"}}} -->
-<div class="wp-block-button is-style-sharp"><a class="wp-block-button__link wp-element-button" style="letter-spacing:1px;text-transform:uppercase">Contact</a></div>
+<div class="wp-block-buttons" style="margin-bottom:var(--wp--preset--spacing--20)"><!-- wp:button {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"1px"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="letter-spacing:1px;text-transform:uppercase">Contact</a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-arrow-plain","style":{"typography":{"letterSpacing":"1px","textTransform":"uppercase"}}} -->

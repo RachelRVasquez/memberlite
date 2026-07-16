@@ -27,8 +27,8 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"color-action","textColor":"site-navigation-background","className":"is-style-pill","style":{"typography":{"textTransform":"uppercase","letterSpacing":"1px"},"elements":{"link":{"color":{"text":"var:preset|color|site-navigation-background"}}}}} -->
-<div class="wp-block-button is-style-pill"><a class="wp-block-button__link has-site-navigation-background-color has-color-action-background-color has-text-color has-background has-link-color wp-element-button" style="letter-spacing:1px;text-transform:uppercase">Register now</a></div>
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"color-action","textColor":"site-navigation-background","style":{"typography":{"textTransform":"uppercase","letterSpacing":"1px"},"elements":{"link":{"color":{"text":"var:preset|color|site-navigation-background"}}}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-site-navigation-background-color has-color-action-background-color has-text-color has-background has-link-color wp-element-button" style="letter-spacing:1px;text-transform:uppercase">Register now</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div></div>

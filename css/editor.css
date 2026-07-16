@@ -81,15 +81,6 @@ label[for="memberlite-menu-location-select"] {
 /*--------------------------------------------------------------
  Buttons/Button Block Styles
 --------------------------------------------------------------*/
-.wp-block-button.is-style-pill .wp-element-button {
-	border-radius: 10em;
-	padding: calc(var(--wp--preset--spacing--10) / 2) var(--wp--preset--spacing--30);
-}
-
-.wp-block-button.is-style-sharp .wp-element-button {
-	border-radius: 0;
-}
-
 .wp-block-button.is-style-arrow-fill .wp-element-button,
 .wp-block-button.is-style-arrow-plain .wp-element-button {
 	display: flex;

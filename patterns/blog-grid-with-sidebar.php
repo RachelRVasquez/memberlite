@@ -49,8 +49,8 @@
 					<!-- /wp:paragraph -->
 					<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 					<div class="wp-block-buttons">
-						<!-- wp:button {"width":75,"className":"is-style-pill"} -->
-						<div class="wp-block-button has-custom-width wp-block-button__width-75 is-style-pill"><a class="wp-block-button__link wp-element-button" href="#">Subscribe Now</a></div>
+						<!-- wp:button {"width":75} -->
+						<div class="wp-block-button has-custom-width wp-block-button__width-75"><a class="wp-block-button__link wp-element-button" href="#">Subscribe Now</a></div>
 						<!-- /wp:button -->
 					</div>
 					<!-- /wp:buttons -->

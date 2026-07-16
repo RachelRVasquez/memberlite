@@ -28,8 +28,8 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-pill","style":{"typography":{"textTransform":"capitalize"}},"fontSize":"24"} -->
-<div class="wp-block-button is-style-pill"><a class="wp-block-button__link has-24-font-size has-custom-font-size wp-element-button" style="text-transform:capitalize">Join now</a></div>
+<div class="wp-block-buttons"><!-- wp:button {"style":{"typography":{"textTransform":"capitalize"}},"fontSize":"24"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-24-font-size has-custom-font-size wp-element-button" style="text-transform:capitalize">Join now</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->
