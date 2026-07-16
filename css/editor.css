@@ -583,3 +583,19 @@ hr.wp-block-separator.is-style-flourish-circle-diamond {
 	height: 2px;
 	background: currentColor;
 }
+
+/*--------------------------------------------------------------
+ Post Title Block Styles
+--------------------------------------------------------------*/
+.wp-block-post-title.is-style-title-podcast > a:before, .wp-block-post-title.is-style-title-video > a:before, .wp-block-post-title.is-style-title-podcast:not(:has(> a)):before, .wp-block-post-title.is-style-title-video:not(:has(> a)):before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	color: currentColor;
+	padding-right: 0.5em;
+}
+.wp-block-post-title.is-style-title-podcast > a:before, .wp-block-post-title.is-style-title-podcast:not(:has(> a)):before {
+	content: "\f3c9";
+}
+.wp-block-post-title.is-style-title-video > a:before, .wp-block-post-title.is-style-title-video:not(:has(> a)):before {
+	content: "\f144";
+}

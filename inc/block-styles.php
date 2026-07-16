@@ -29,11 +29,7 @@ function memberlite_register_block_styles(): void {
 		'core/separator' => array(
 			array( 'name' => 'faded-edges', 'label' => __( 'Faded Edges', 'memberlite' ) ),
 			array( 'name' => 'double', 'label' => __( 'Double', 'memberlite' ) ),
-			array( 'name' => 'wave', 'label' => __( 'Wave', 'memberlite' ) ),
 			array( 'name' => 'flourish-diamond', 'label' => __( 'Diamond', 'memberlite' ) ),
-			array( 'name' => 'flourish-arrow', 'label' => __( 'Arrow', 'memberlite' ) ),
-			array( 'name' => 'flourish-triple-diamond', 'label' => __( 'Triple Diamond', 'memberlite' ) ),
-			array( 'name' => 'flourish-circle-diamond', 'label' => __( 'Circle Diamond', 'memberlite' ) ),
 		),
 		'core/search'    => array(
 			array( 'name' => 'filled-pill', 'label' => __( 'Filled Pill', 'memberlite' ) ),
@@ -56,10 +52,11 @@ function memberlite_register_block_styles(): void {
 			array( 'name' => 'accrdn-caret', 'label' => __( 'Caret', 'memberlite' ) ),
 		),
 		'core/heading' => array(
-			array(
-				'name'  => 'heading-rule',
-				'label' => __( 'Rule', 'loresmith' )
-			),
+			array( 'name'  => 'heading-rule', 'label' => __( 'Rule', 'memberlite' ) ),
+		),
+		'core/post-title' => array(
+			array( 'name'  => 'title-podcast', 'label' => __( 'Podcast', 'memberlite' ) ),
+			array( 'name'  => 'title-video', 'label' => __( 'Video', 'memberlite' ) ),
 		),
 	);
 

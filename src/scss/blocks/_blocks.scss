@@ -503,7 +503,7 @@ hr.wp-block-separator {
 }
 
 // -----------------------------------------------------------------------------
-// Query Loop Block
+// Query Loop & Title Block
 // -----------------------------------------------------------------------------
 
 .wp-block-query ul {
@@ -513,6 +513,28 @@ hr.wp-block-separator {
 
 .entry-content .wp-block-query .wp-post-image {
 	margin-bottom: 0;
+}
+
+.wp-block-post-title {
+	&.is-style-title-podcast > a:before,
+	&.is-style-title-video > a:before,
+	&.is-style-title-podcast:not(:has(> a)):before,
+	&.is-style-title-video:not(:has(> a)):before {
+		font-family: $font-family-awesome;
+		font-weight: 900;
+		color: currentColor;
+		padding-right: .5em;
+	}
+
+	&.is-style-title-podcast > a:before,
+	&.is-style-title-podcast:not(:has(> a)):before {
+		content: "\f3c9";
+	}
+
+	&.is-style-title-video > a:before,
+	&.is-style-title-video:not(:has(> a)):before {
+		content: "\f144";
+	}
 }
 
 // -----------------------------------------------------------------------------
