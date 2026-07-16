@@ -21,8 +21,6 @@ function memberlite_register_block_styles(): void {
 			array( 'name' => 'horizontal-center', 'label' => __( 'Horizontal Center', 'memberlite' ) ),
 		),
 		'core/button'    => array(
-			array( 'name' => 'pill', 'label' => __( 'Pill', 'memberlite' ) ),
-			array( 'name' => 'sharp', 'label' => __( 'Sharp', 'memberlite' ) ),
 			array( 'name' => 'arrow-fill', 'label' => __( 'Arrow Fill', 'memberlite' ) ),
 			array( 'name' => 'arrow-plain', 'label' => __( 'Arrow Plain', 'memberlite' ) ),
 		),
