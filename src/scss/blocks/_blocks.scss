@@ -390,7 +390,7 @@ hr.wp-block-separator {
 			background-color: var(--wp--preset--color--buttons);
 			border: none;
 			color: var(--wp--preset--color--base);
-			height: 50px;
+			height: 52px;
 			margin-left: 0.5rem;
 			display: flex;
 			align-items: center;
@@ -435,7 +435,7 @@ hr.wp-block-separator {
 			border: none;
 			border-radius: 0;
 			color: var(--wp--preset--color--base);
-			height: 50px;
+			height: 52px;
 			margin-left: 0.5rem;
 			display: flex;
 			align-items: center;
@@ -470,14 +470,16 @@ hr.wp-block-separator {
 //Filled Sharp & Icon Square Search Button
 .wp-block-search__icon-button.is-style-filled-sharp:not(.wp-block-search__button-only) .wp-block-search__button,
 .wp-block-search__icon-button.is-style-icon-square:not(.wp-block-search__button-only) .wp-block-search__button {
-	width: 50px;
+	width: 52px;
 }
 
 //Filled Pill & Icon Round w/ Icon Button
 .wp-block-search__icon-button.is-style-filled-pill .wp-block-search__button,
-.wp-block-search__icon-button.is-style-icon-round .wp-block-search__button {
+.wp-block-search__icon-button.is-style-icon-roun
+
+d .wp-block-search__button {
 	border-radius: 50%;
-	width: 50px;
+	width: 52px;
 }
 
 // Icon Round Search Button w/ Text Button
@@ -507,7 +509,12 @@ hr.wp-block-separator {
 // -----------------------------------------------------------------------------
 
 .wp-block-query ul {
-	padding-left: 0;
+	padding-left: unset;
+	margin-left: unset;
+}
+
+.entry-content .wp-block-query .wp-post-image {
+	margin-bottom: 0;
 }
 
 // -----------------------------------------------------------------------------

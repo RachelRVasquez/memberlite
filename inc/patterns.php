@@ -26,6 +26,7 @@ function memberlite_register_pattern_categories(): void {
 		'memberlite-hero'         => __( 'Memberlite - Hero', 'memberlite' ),
 		'memberlite-media'        => __( 'Memberlite - Media', 'memberlite' ),
 		'memberlite-pricing'      => __( 'Memberlite - Pricing', 'memberlite' ),
+		'memberlite-query-loops'  => __( 'Memberlite - Query Loops', 'memberlite' ),
 		'memberlite-team'         => __( 'Memberlite - Team', 'memberlite' ),
 		'memberlite-testimonials' => __( 'Memberlite - Testimonials', 'memberlite' ),
 	);
