@@ -4,7 +4,7 @@
  * Slug: memberlite/course-grid-with-member-progress
  * Description: A featured courses section with two cover-style course cards, plus a free lessons gallery alongside the PMPro Courses "My Courses" block showing a member's progress.
  * Categories: memberlite-courses
- * Keywords: courses, coaching, lessons, progress, my courses, pmpro-courses
+ * Keywords: courses, coaching, lessons, progress, my courses, pmpro_course, pmpro_lesson
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

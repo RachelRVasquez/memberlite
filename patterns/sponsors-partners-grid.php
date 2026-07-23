@@ -4,7 +4,7 @@
  * Slug: memberlite/sponsors-partners-grid
  * Description: A full-width section showcasing sponsor and partner organization logos in a grid, ideal for associations, nonprofits, and community sites.
  * Categories: memberlite-about
- * Keywords: sponsors, partners, logos, trust, grid, organizations
+ * Keywords: sponsors, partners, logos, trust, grid, organizations, association, community
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

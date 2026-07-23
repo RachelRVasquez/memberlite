@@ -4,7 +4,7 @@
  * Slug: memberlite/blog-highlights-with-search
  * Description: Two-column blog layout featuring the latest post with a full image on one side, and a search field with four more recent post titles stacked beneath it on the other.
  * Categories: memberlite-query-loops
- * Keywords: blog, posts, search, query loop, recent posts, news, courses, series, lessons
+ * Keywords: blog, posts, search, query loop, recent posts, news, courses, series, lessons, premium_content, pmpro_course, pmpro_lesson, pmpro_series
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

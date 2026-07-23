@@ -4,7 +4,7 @@
  * Slug: memberlite/pricing-single-course-with-image
  * Description: Single price callout on the right paired with a headline, image, and colored background on the left. Content is static and does not pull from PMPro membership levels, so it should be customized per site. Perk checkmarks use the Memberlite Font Awesome shortcode.
  * Categories: memberlite-pricing
- * Keywords: pricing, plans, membership, course, product, perks
+ * Keywords: pricing, plans, membership, course, product, perks, courses, pmpro_course
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD
