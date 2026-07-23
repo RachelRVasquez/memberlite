@@ -5,7 +5,6 @@
  * Description: Bold membership call-to-action section with a slim copyright bar below. High-conversion layout.
  * Categories: memberlite-footer, footer
  * Keywords: footer, cta, join, call to action, conversion
- * Synced: false
  * Block Types: core/post-content
  * Post Types: memberlite_footer
  * Note: Update button links to point to your membership levels and checkout pages.

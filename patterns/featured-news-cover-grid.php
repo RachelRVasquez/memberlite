@@ -5,7 +5,6 @@
  * Description: A cover-style grid highlighting the latest post as a large featured cover with title, author, and date, alongside four smaller post covers in a 2x2 grid.
  * Categories: memberlite-query-loops
  * Keywords: blog, posts, news, cover, query loop, grid, featured post, recent posts, courses, series, lessons
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

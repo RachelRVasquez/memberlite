@@ -5,7 +5,6 @@
  * Description: Logo and branding on top, with four link columns below. Dark background.
  * Categories: memberlite-footer, footer
  * Keywords: footer, logo, columns, links, membership, dark
- * Synced: false
  * Block Types: core/post-content
  * Post Types: memberlite_footer
  * @package WordPress

@@ -5,7 +5,6 @@
  * Description: The default footer.
  * Categories: memberlite-footer, footer
  * Keywords: footer, links
- * Synced: false
  * Block Types: core/post-content
  * Post Types: memberlite_footer
  * @package WordPress

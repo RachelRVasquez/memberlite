@@ -5,7 +5,6 @@
  * Description: A featured member profile card with photo, bio, and membership details for directories and community pages.
  * Categories: memberlite-community
  * Keywords: member, spotlight, profile, directory, featured
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

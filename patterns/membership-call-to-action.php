@@ -5,7 +5,6 @@
  * Description: Promote your membership levels to increase signups.
  * Categories: memberlite-cta
  * Keywords: marketing, call to action, cta, promotion, join, subscribe, membership
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

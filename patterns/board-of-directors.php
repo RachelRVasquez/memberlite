@@ -5,7 +5,6 @@
  * Description: A grid of organizational leaders with photos, names, and titles for associations and nonprofits.
  * Categories: memberlite-team
  * Keywords: board, directors, leadership, association, nonprofit, team
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

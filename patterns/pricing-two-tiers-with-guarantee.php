@@ -5,7 +5,6 @@
  * Description: Heading and subtitle above a two-column pricing table with a perks checklist, plus a money-back guarantee callout below. Content is static and does not pull from PMPro membership levels, so it should be customized per site. Perk checkmarks and the guarantee icon use the Memberlite Font Awesome shortcode rather than the WordPress Icon block, for compatibility with sites not yet on WordPress 7; the guarantee icon's circle badge uses the shortcode's own color/background/shape attributes.
  * Categories: memberlite-pricing
  * Keywords: pricing, plans, membership, guarantee, money back, perks, comparison
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

@@ -5,7 +5,6 @@
  * Description: Highlight key metrics for your association or nonprofit with icons and large numbers.
  * Categories: memberlite-about
  * Keywords: stats, metrics, numbers, association, nonprofit, impact
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

@@ -5,7 +5,6 @@
  * Description: Three-column pricing table with perks and a call-to-action button per tier. Content is static and does not pull from PMPro membership levels, so it should be customized per site. Perk checkmarks use the Memberlite Font Awesome shortcode.
  * Categories: memberlite-pricing
  * Keywords: pricing, plans, membership, tiers, table, comparison
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

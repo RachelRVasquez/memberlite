@@ -5,7 +5,6 @@
  * Description: Minimal centered footer with copyright, navigation, social icons, and site tagline. Light background.
  * Categories: memberlite-footer, footer
  * Keywords: footer, minimal, centered, simple
- * Synced: false
  * Block Types: core/post-content
  * Post Types: memberlite_footer
  * @package WordPress

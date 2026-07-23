@@ -5,7 +5,6 @@
  * Description: A two-column instructor or coach profile with photo, bio, and credentials.
  * Categories: memberlite-courses
  * Keywords: instructor, coach, teacher, profile, bio, course
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

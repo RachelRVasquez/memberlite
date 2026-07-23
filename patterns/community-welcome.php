@@ -5,7 +5,6 @@
  * Description: A welcoming introduction to your community with expandable guidelines and expectations using details blocks.
  * Categories: memberlite-community
  * Keywords: community, welcome, guidelines, rules, onboarding, accordion
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

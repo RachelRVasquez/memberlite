@@ -5,7 +5,6 @@
  * Description: Two-column blog layout featuring the latest post with a full image on one side, and a search field with four more recent post titles stacked beneath it on the other.
  * Categories: memberlite-query-loops
  * Keywords: blog, posts, search, query loop, recent posts, news, courses, series, lessons
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

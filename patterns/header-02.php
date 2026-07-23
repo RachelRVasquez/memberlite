@@ -5,7 +5,6 @@
  * Description: Logo, navigation, and member info all on a single row.
  * Categories: memberlite-header, header
  * Keywords: header, navigation, member, inline, compact, single-row
- * Synced: false
  * Viewport Width: 1280
  * Block Types: core/post-content
  * Post Types: memberlite_header

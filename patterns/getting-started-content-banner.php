@@ -5,7 +5,6 @@
  * Description: A full-width banner inviting new or beginner members to a curated starting point, with a photo card and call to action.
  * Categories: memberlite-content
  * Keywords: onboarding, getting started, beginner, new member, orientation, cta
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

@@ -5,7 +5,6 @@
  * Description: Icon and image "content upgrade" call to action to build your email list or promote offers.
  * Categories: memberlite-cta
  * Keywords: marketing, call to action, cta, content upgrade, promotion, lead magnet
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

@@ -5,7 +5,6 @@
  * Description: A dark full-width band with three centered icon, heading, and text columns highlighting membership benefits.
  * Categories: memberlite-content, memberlite-features
  * Keywords: benefits, features, icons, columns, membership
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

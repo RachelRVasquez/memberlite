@@ -5,7 +5,6 @@
  * Description: A 2x2 grid of recent posts with featured images, titles, and excerpts alongside a sidebar with a newsletter signup, social links, and a search bar.
  * Categories: memberlite-query-loops
  * Keywords: blog, posts, search, query loop, recent posts, news, newsletter, social, sidebar, courses, series, lessons
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

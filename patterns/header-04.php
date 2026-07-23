@@ -5,7 +5,6 @@
  * Description: Header bar with site title and navigation on the left, and member info on the right.
  * Categories: memberlite-header, header
  * Keywords: header, navigation, member, member info
- * Synced: false
  * Viewport Width: 1280
  * Block Types: core/post-content
  * Post Types: memberlite_header

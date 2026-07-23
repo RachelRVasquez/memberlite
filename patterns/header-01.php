@@ -5,7 +5,6 @@
  * Description: Site branding on the left, member info on the right, with navigation below.
  * Categories: memberlite-header, header
  * Keywords: header, navigation, member, classic, two-column
- * Synced: false
  * Viewport Width: 1280
  * Block Types: core/post-content
  * Post Types: memberlite_header

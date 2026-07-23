@@ -5,7 +5,6 @@
  * Description: Highlight some people using this website.
  * Categories: memberlite-about
  * Keywords: members, community, instructors, team, users, people, testimonials
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

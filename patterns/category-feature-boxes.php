@@ -5,7 +5,6 @@
  * Description: Three content categories with icons, descriptions, and links to help visitors navigate your blog or news sections.
  * Categories: memberlite-content, memberlite-features
  * Keywords: blog, categories, news, navigation, content
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

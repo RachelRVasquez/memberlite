@@ -5,7 +5,6 @@
  * Description: Two side-by-side cover image cards, each with a short two-line headline and a CTA button, for teasing content or a promotion.
  * Categories: memberlite-content
  * Keywords: content, teaser, promo, cover, columns
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

@@ -5,7 +5,6 @@
  * Description: A full-width hero header with a dark overlay image, top navigation bar, tagline, bold heading, event date, and call-to-action buttons. Ideal for conference or event membership sites.
  * Categories: memberlite-header, header
  * Keywords: header, navigation, logo, conference, event, hero
- * Synced: false
  * Viewport Width: 1280
  * Block Types: core/post-content
  * Post Types: memberlite_header

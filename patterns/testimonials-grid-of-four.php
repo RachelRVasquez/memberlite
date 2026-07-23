@@ -5,7 +5,6 @@
  * Description: Highlight what 4 people are saying about your products and services with beautiful testimonials.
  * Categories: memberlite-testimonials
  * Keywords: logos, trusted by, social proof, users, testimonials, people
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

@@ -5,7 +5,6 @@
  * Description: Fully centered footer with logo, site name, tagline, navigation, and social icons. Great for personal brands and solo membership creators. Light background.
  * Categories: memberlite-footer, footer
  * Keywords: footer, centered, logo, personal brand, minimal
- * Synced: false
  * Block Types: core/post-content
  * Post Types: memberlite_footer
  * @package WordPress

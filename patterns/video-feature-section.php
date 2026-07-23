@@ -5,7 +5,6 @@
  * Description: A featured video section with an embed area, title, description, and call-to-action for video membership sites.
  * Categories: memberlite-media
  * Keywords: video, embed, featured, media, streaming
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

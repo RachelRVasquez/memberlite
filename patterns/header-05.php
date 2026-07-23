@@ -5,7 +5,6 @@
  * Description: Promotional top bar with sign-in and social links, plus a centered logo flanked by navigation on either side.
  * Categories: memberlite-header, header
  * Keywords: header, navigation, centered, logo, two-row, promotional, split nav
- * Synced: false
  * Viewport Width: 1280
  * Block Types: core/post-content
  * Post Types: memberlite_header

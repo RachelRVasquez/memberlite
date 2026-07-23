@@ -5,7 +5,6 @@
  * Description: A four-feature grid with icons and a pair of call-to-action buttons.
  * Categories: memberlite-about
  * Keywords: features, grid, icons, membership
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite 7.0

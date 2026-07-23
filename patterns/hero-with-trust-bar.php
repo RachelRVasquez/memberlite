@@ -5,7 +5,6 @@
  * Description: A full-width cover image hero with a rounded bottom edge, centered headline and CTAs, and a trust bar highlighting reviews and guarantees.
  * Categories: memberlite-hero
  * Keywords: hero, cover, cta, trust, reviews, guarantee
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD

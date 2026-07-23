@@ -5,7 +5,6 @@
  * Description: A full-width banner heading, a larger featured post with image/date/title/excerpt, a divider, and a 3x2 grid of recent posts with date, title, and excerpt cards.
  * Categories: memberlite-query-loops
  * Keywords: blog, posts, banner, featured post, query loop, grid, recent posts, news, courses, series, lessons
- * Synced: false
  * @package WordPress
  * @subpackage Memberlite
  * @since Memberlite TBD
